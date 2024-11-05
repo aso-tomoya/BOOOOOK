@@ -1,0 +1,103 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(240, 240, 243);
+}
+
+header {
+    background-color: #666666;
+    padding: 10px 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    color: #ff6600;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+}
+
+header .search-bar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin: 4px 20px;
+}
+
+header .search-bar input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 20px;
+    border: none;
+}
+
+header .search-bar button {
+    background-color: transparent;
+    border: none;
+    margin-left: -30px;
+    cursor: pointer;
+}
+
+header .login-button,
+header .cart-button {
+    background-color: #ffffff;
+    color: #666666;
+    border: none;
+    padding: 4px 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.container {
+    padding: 20px;
+}
+
+.ranking,
+.pickup {
+    margin-bottom: 40px;
+}
+
+.ranking h2,
+.pickup h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.item-list {
+    display: flex;
+    gap: 20px;
+}
+
+.item {
+    text-align: center;
+}
+
+.item img {
+    width: 100px;
+    height: 120px;
+    background-color: #cccccc;
+}
+
+.item .title {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.item .price {
+    color: #666666;
+    font-size: 12px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .item-list {
+        flex-wrap: wrap;
+    }
+}
