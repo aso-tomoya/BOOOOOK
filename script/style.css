@@ -61,6 +61,10 @@ header .cart-button {
     margin: 5px;
 }
 
+header .title {
+    text-decoration: none;
+}
+
 .container {
     padding: 20px;
 }
