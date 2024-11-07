@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="script/style.css">
+    <link rel="stylesheet" href="../script/style.css">
     <title>検索結果</title>
 </head>
 <body>
 
-<?php include 'header.php' ?>
+<?php include '../header.php' ?>
 <div class="container">
     <h2>「〇〇〇」の検索結果</h2>
     <p>〇〇件</p>
