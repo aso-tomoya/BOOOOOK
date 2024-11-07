@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../script/style.css">
-    <title>購入画面</title>
+    <title>購入</title>
 </head>
 <body>
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../script/style.css">
-    <title>商品追加画面</title>
+    <title>商品追加</title>
 </head>
 <body>
 
