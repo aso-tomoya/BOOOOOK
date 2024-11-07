@@ -19,6 +19,7 @@ header h1 {
     color: #ff6600;
     font-size: xx-large;
     font-weight: bold;
+    display: flex;
     margin: 0;
 }
 
@@ -43,7 +44,7 @@ header .search-bar input[type="text"] {
 header .search-bar button {
     background-color: transparent;
     border: none;
-    margin-left: -35px;
+    margin-left: -40px;
     cursor: pointer;
     font-size: large;
 }
@@ -59,6 +60,12 @@ header .cart-button {
     font-size: large;
     font-weight: bold;
     margin: 5px;
+}
+
+
+header .link{
+    color: #ff6600;
+    text-decoration: none;
 }
 
 .container {
