@@ -9,7 +9,6 @@
 <body>
 
 <?php include '../header.php' ?>
-
 <div class="container">
     <div class="ranking">
         <h2>ランキング</h2>
@@ -36,6 +35,6 @@
         </div>
     </fieldset>
 </div>
-
+opopopopopopopop
 </body>
 </html>
