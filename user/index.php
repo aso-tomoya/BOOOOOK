@@ -21,6 +21,7 @@
             <!-- 他の商品も同様に追加 -->
         </div>
     </div>
+    
     <fieldset disabled="disabled">
         <div class="pickup">
             <h2>ピックアップ</h2>
@@ -35,6 +36,5 @@
         </div>
     </fieldset>
 </div>
-opopopopopopopop
 </body>
 </html>
