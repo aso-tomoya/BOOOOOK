@@ -1,9 +1,5 @@
 <header>
-
-    <!-- タイトルロゴ -->
-    <h1><a href="index.php" class="link"><img src="img/BOOOOOK.png" alt="BOOOOOK" width="200"></a></h1>
-
-    <!-- 検索バー -->
+    <h1>BOOOOOK</h1>
     <div class="search-bar">
         <input type="text" placeholder="検索">
         <button>🔍</button>
