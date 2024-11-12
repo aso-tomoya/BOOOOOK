@@ -38,34 +38,39 @@ header .search-bar input[type="text"] {
     padding-left: 20px;
     border-radius: 20px;
     border: none;
-    font-size: large;
+    font-size: 20px;
 }
 
 header .search-bar button {
     background-color: transparent;
     border: none;
-    margin-left: -40px;
+    margin-left: -50px;
     cursor: pointer;
-    font-size: large;
+    font-size: 20px;
 }
 
 header .login-button,
-header .cart-button {
+header .cart-button{
     background-color: #ffffff;
     color: #666666;
     border: none;
     padding: 4px 5px;
     cursor: pointer;
     border-radius: 4px;
-    font-size: large;
+    font-size: 20px;
     font-weight: bold;
     margin: 5px;
+    height: 40px;
 }
 
-
-header .link{
+header .link {
     color: #ff6600;
     text-decoration: none;
+}
+
+.header-container {
+    width: 180px;
+    text-align: right;
 }
 
 .container {
