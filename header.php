@@ -1,5 +1,14 @@
 <header>
 
+<?php 
+// データベースアクセス
+$db=new PDO('mysql:host=mysql311.phy.lolipop.lan;
+            dbname=LAA1557203-boooook;charset=utf8',
+            'LAA1557203',
+            'boooook');
+
+?>
+
 <!-- タイトルロゴ -->
     <h1><a href="index.php" class="link"><img src="../img/BOOOOOK.png" alt="BOOOOOK" width="200"></a></h1>
 

@@ -84,8 +84,9 @@ header .link {
 
 .ranking h2,
 .pickup h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .item-list {
@@ -95,22 +96,45 @@ header .link {
 
 .item {
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;      /*ホバー時の動き制御*/
+    position: relative;  /* 順位表示用 */
+}
+
+.item:hover {       /*ホバー時の動作*/
+    cursor: pointer;
+    transform: scale(1.05);     /*拡大*/
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);      影を追加 */
 }
 
 .item img {
-    width: 100px;
-    height: 120px;
+    width: 200px;
     background-color: #cccccc;
 }
 
+.item img:nth-child(-n+3) {
+    width: 250px;
+}
+
 .item .title {
-    font-size: 14px;
+    font-size: 25px;
     margin-top: 5px;
 }
 
 .item .price {
     color: #666666;
-    font-size: 12px;
+    font-size: 15px;
+}
+
+.item .rank {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #e97132;
+    padding: 5px 20px;
+    font-size: 30px;
+    border-radius: 50%;
+    font-weight: bold;
 }
 
 /* レスポンシブ対応 */
