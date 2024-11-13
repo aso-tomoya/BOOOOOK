@@ -91,7 +91,10 @@ header .link {
 
 .item-list {
     display: flex;
+    align-items: flex-end;
+    overflow-x: auto; /* 横スクロールを可能に */
     gap: 60px;
+    padding: 50px;
 }
 
 .item {
@@ -107,11 +110,11 @@ header .link {
 }
 
 .item img {
-    width: 150px;
+    width: 180px;
     background-color: #cccccc;
 }
 
-.item img:nth-child(-n+3) {
+.item .img-top-3 {
     width: 200px;
 }
 
@@ -135,11 +138,4 @@ header .link {
     font-size: 30px;
     border-radius: 50%;
     font-weight: bold;
-}
-
-/* レスポンシブ対応 */
-@media (max-width: 768px) {
-    .item-list {
-        flex-wrap: wrap;
-    }
 }

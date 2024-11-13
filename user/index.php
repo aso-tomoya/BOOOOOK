@@ -23,6 +23,7 @@ session_start();
 <div class="container">
     <div class="ranking">
         <h2>ランキング</h2>
+        
         <div class="item-list">
 
             <!-- <div class="item">
@@ -42,9 +43,11 @@ session_start();
                 $itemPrice = number_format($item['item_price']);  // 価格をカンマ区切りに
                 $itemImg = htmlspecialchars($item['item_img'], ENT_QUOTES, 'UTF-8');
 
+                $imgClass = $rank <= 3 ? 'img-top-3' : 'img';
+
                 echo '<div class="item">';
                 echo '<div class="rank">' . $rank . '位</div>';  // 順位表示
-                echo '<img src="../img/' . $itemImg . '" alt="' . $itemName . '">';  // 商品画像
+                echo '<img src="../img/'.$itemImg.'" alt="'.$itemName.'" class="'.$imgClass.'">';  // 商品画像
                 echo '<div class="title">' . $itemName . '</div>';  // 商品名
                 echo '<div class="price">¥' . $itemPrice . '</div>';  // 価格
                 echo '</div>';
@@ -65,11 +68,7 @@ session_start();
             <h2>ピックアップ</h2>
             <div class="item-list">
 
-                <div class="item">
-                    <img src="#" alt="商品画像">
-                    <div class="title">タイトル</div>
-                    <div class="price">¥0000</div>
-                </div>
+                
                 
             </div>
         </div>
