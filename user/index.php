@@ -75,15 +75,7 @@ session_start();
         </div>
     </fieldset>
 </div>
+
+<script src="../script/script.js"></script>
 </body>
 </html>
-
-
-<!-- 
-<?php include('../method/itemGet.php');
-        $item = get($db,1);
-        foreach ($item as $i){
-            echo $i['item_id'];
-        }
-        ?>
- -->
