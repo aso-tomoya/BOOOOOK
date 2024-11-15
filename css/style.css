@@ -89,7 +89,7 @@ header .link {
     margin-bottom: 80px;
 }
 
-.item-list {
+.ranking .item-list {
     display: flex;
     align-items: flex-end;
     overflow-x: auto; /* 横スクロールを可能に */
@@ -97,10 +97,24 @@ header .link {
     padding: 50px;
 }
 
-.item {
+.ranking .item {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;      /*ホバー時の動き制御*/
     position: relative;  /* 順位表示用 */
+}
+
+.pickup .item-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+    gap: 60px;
+    padding: 50px;
+}
+
+.pickup .item {
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;      /*ホバー時の動き制御*/
 }
 
 .item:hover {       /*ホバー時の動作*/
@@ -138,4 +152,30 @@ header .link {
     font-size: 30px;
     border-radius: 50%;
     font-weight: bold;
+}
+
+.button1 {
+    width: 150px;
+    background-color: #00CCFF;
+    color: white;
+    border-radius: 25px; /* 楕円形にする */
+    padding: 8px 30px;
+    border: none;
+}
+
+.button2 {
+    width: 150px;
+    background-color: white;
+    color:#00CCFF ;
+    border-radius: 25px; /* 楕円形にする */
+    padding: 8px 30px;
+    border: 1.5px solid #00CCFF;
+}
+
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .item-list {
+        flex-wrap: wrap;
+    }
 }
