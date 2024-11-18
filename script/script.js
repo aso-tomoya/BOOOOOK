@@ -15,3 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 });
+
+function goToItemPage(itemId){
+    window.location.href = `product.php?id=${itemId}`;
+}
+
+function addToCart(itemId) {
+    alert("商品ID " + itemId + " をカートに追加しました！");
+}

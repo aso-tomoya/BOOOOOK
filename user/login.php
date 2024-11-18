@@ -1,3 +1,5 @@
+<?php include '../header.php' ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -8,8 +10,6 @@
 </head>
 
 <body>
-
-<?php include '../header.php' ?>
 
 <div class="login-container">
     <p class="login-title">boooookサイトログイン</p>
