@@ -88,6 +88,10 @@ session_destroy();
     </fieldset>
 </div>
 
+<div id="back-to-top" class="back-to-top">
+    ↑
+</div>
+
 <script src="../script/script.js"></script>
 </body>
 </html>
