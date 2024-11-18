@@ -8,7 +8,7 @@
 </head>
 <style>
         .button1 {
-            width: 150px;
+            width: 200px;
             background-color: #00CCFF;
             color: white;
             border-radius: 25px; /* 楕円形にする */
@@ -16,7 +16,7 @@
             border: none;
         }
         .button2 {
-            width: 150px;
+            width: 200px;
             background-color: white;
             color:#00CCFF ;
             border-radius: 25px; /* 楕円形にする */
@@ -25,14 +25,12 @@
         }
         .mail{
             width: 200px;
-            
             border-radius: 25px; /* 楕円形にする */
             padding: 8px 10px;
             border: 1.5px solid #000000;
         }
         .pass{
             width: 200px;
-            
             border-radius: 25px; /* 楕円形にする */
             padding: 8px 10px;
             border: 1.5px solid #000000;
