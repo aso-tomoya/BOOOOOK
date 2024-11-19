@@ -26,12 +26,14 @@ $genre = getGenre($db, $item['genre_id']);
         </div>
         <div class="product-info">
             <h1><?= $item['item_name'] ?></h1>
+            <hr>
             <ul>
-                <li>著　者　： <?= $item['author'] ?></li>
+                <li>著者： <?= $item['author'] ?></li>
                 <li>ジャンル： <?= $genre['genre_name'] ?></li>
-                <li>発売日　： <?= $item['release_date'] ?></li>
-                <li>価　格　： ¥<?= number_format($item['item_price']) ?></li>
+                <li>発売日： <?= date('Y/m/d', strtotime($item['release_date'])) ?></li>
+                <li>価格： ¥<?= number_format($item['item_price']) ?></li>
             </ul>
+            <hr>
             <button class="product-button" >カートに入れる</button>
         </div>
     </div>

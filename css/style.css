@@ -135,7 +135,15 @@ header .link {
 .item .title {
     font-size: 25px;
     margin-top: 5px;
+    max-width: 200px; /* タイトルの最大幅 */
+    display: -webkit-box; /* ブラウザ対応のために必要 */
+    line-clamp: 0;
+    -webkit-line-clamp: 2; /* 表示する行数 */
+    -webkit-box-orient: vertical; /* 縦方向のボックスを指定 */
+    overflow: hidden; /* 溢れた部分を非表示 */
+    text-overflow: ellipsis; /* 見切れた部分に「...」を表示 */
 }
+
 
 .item .price {
     color: #666666;
@@ -269,9 +277,11 @@ header .link {
 /* 商品詳細ページ用のスタイル */
 .product-container {
     display: flex;
+    border:double 7px #CCCFD6;
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    margin: 20px;
     background-color: #fff;
 }
 
@@ -289,6 +299,7 @@ header .link {
     object-fit: cover;
     background-color: #f0f0f0;
     border: 1px solid #ccc;
+    box-shadow: 10px 10px 15px -10px;
 }
 
 .product-info {
@@ -298,25 +309,30 @@ header .link {
 .product-info h1 {
     font-size: 32px;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
+    /* border-bottom: 2px solid #ccc; */
 }
 
 .product-info ul {
     list-style: none;
-    padding: 0;
+    padding: 10px;
 }
 
 .product-info li {
     font-size: 18px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: right;
 }
 
 .product-button {
+    display:block;
     background-color: #00CCFF;
     color: white;
     border-radius: 25px;
     padding: 8px 20px;
-    margin: 50px 30px 30px 140px;
+    margin-top: 45px;
+    margin-left:auto;
+    margin-right:auto;
     border: none;
     font-size: 22px;
     cursor: pointer;
