@@ -34,7 +34,7 @@ $genre = getGenre($db, $item['genre_id']);
                 <li>価格： ¥<?= number_format($item['item_price']) ?></li>
             </ul>
             <hr>
-            <button class="product-button" >カートに入れる</button>
+            <button class="product-button" onclick="addToCart('<?=$item['item_id']?>')">カートに入れる</button>
         </div>
     </div>
 
@@ -44,6 +44,10 @@ $genre = getGenre($db, $item['genre_id']);
     </div>
 </div>
 
-<script></script>
+<div id="back-to-top" class="back-to-top">
+    ↑
+</div>
+
+<script src="../script/script.js"></script>
 </body>
 </html>

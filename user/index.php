@@ -1,5 +1,6 @@
 <?php
 session_start();
+// session_destroy();
 
 // ヘッダー呼び出し
 include('../header.php');
