@@ -30,7 +30,9 @@
     </style>
 <body>
 
-<?php include '../header.php' ?>
+<?php
+include('../header.php');
+?>
 
 <div style="border: solid 1px #000000; padding: 20px 30px; border-width: 2px; border-radius: 10px; margin: 10px 400px;">
 

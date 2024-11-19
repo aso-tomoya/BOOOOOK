@@ -1,5 +1,3 @@
-<?php include '../header.php' ?>
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -41,7 +39,9 @@
 
 <body>
 
-<?php include '../header.php' ?>
+<?php
+include('../header.php');
+?>
 
 <div style="border: solid 1px #000000; padding: 30px; border-width: 2px; border-radius: 10px; margin: 10px 400px;">
 
