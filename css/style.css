@@ -12,6 +12,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 52;
 }
 
 header h1 {
@@ -94,6 +95,7 @@ header .link {
     overflow-x: auto;
     gap: 60px;
     padding: 50px;
+    height: 450px;
 }
 
 .ranking .item {
@@ -133,7 +135,15 @@ header .link {
 .item .title {
     font-size: 25px;
     margin-top: 5px;
+    max-width: 200px; /* タイトルの最大幅 */
+    display: -webkit-box; /* ブラウザ対応のために必要 */
+    line-clamp: 0;
+    -webkit-line-clamp: 2; /* 表示する行数 */
+    -webkit-box-orient: vertical; /* 縦方向のボックスを指定 */
+    overflow: hidden; /* 溢れた部分を非表示 */
+    text-overflow: ellipsis; /* 見切れた部分に「...」を表示 */
 }
+
 
 .item .price {
     color: #666666;
@@ -262,4 +272,89 @@ header .link {
 
 .admin-login-link:hover {
     text-decoration: underline;
+}
+
+/* 商品詳細ページ用のスタイル */
+.product-container {
+    display: flex;
+    border:double 7px #CCCFD6;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+}
+
+.product-detail {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px;
+    gap: 70px;
+}
+
+.product-image img {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    box-shadow: 10px 10px 15px -10px;
+}
+
+.product-info {
+    max-width: 600px;
+}
+
+.product-info h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 60px;
+    /* border-bottom: 2px solid #ccc; */
+}
+
+.product-info ul {
+    list-style: none;
+    padding: 10px;
+}
+
+.product-info li {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.product-button {
+    display:block;
+    background-color: #00CCFF;
+    color: white;
+    border-radius: 25px;
+    padding: 8px 20px;
+    margin-top: 45px;
+    margin-left:auto;
+    margin-right:auto;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.product-description {
+    max-width: 800px;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(10, 10, 10, 0.5);
+}
+
+.product-description h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.product-description p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
 }

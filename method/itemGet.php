@@ -4,7 +4,14 @@ function get($db, $id)
 {
     $sql = $db->prepare('SELECT * FROM item where item_id = ?');
     $sql->execute([$id]);
-    return $sql->fetchAll(PDO::FETCH_ASSOC);
+    return $sql->fetch(PDO::FETCH_ASSOC);
+}
+
+#ジャンル名取得
+function getGenre($db, $id){
+    $sql = $db->prepare('SELECT genre_name FROM genre where genre_id = ?');
+    $sql->execute([$id]);
+    return $sql->fetch(PDO::FETCH_ASSOC);
 }
 
 #ランキング用
