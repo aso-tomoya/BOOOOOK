@@ -53,7 +53,7 @@ $db=new PDO('mysql:host=mysql311.phy.lolipop.lan;
                         if (isset($_SESSION['cart'])) {
                             echo count($_SESSION['cart']);
                         } else {
-                            echo "";
+                            echo '0';
                         }
                         ?>
                     </button>
