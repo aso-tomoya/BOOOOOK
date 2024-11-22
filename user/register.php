@@ -30,9 +30,7 @@
     </style>
 <body>
 
-<?php
-include('../header.php');
-?>
+<?php include('../header.php'); ?>
 
 <div style="border: solid 1px #000000; padding: 20px 30px; border-width: 2px; border-radius: 10px; margin: 10px 400px;">
 
@@ -54,11 +52,7 @@ include('../header.php');
         </div>
         <div class="form-group">
             <label for="password2">パスワードを確認*</label><br>
-            <?php
-            if(isset($_GET['error1'])){
-                echo '<p style="color:red" style="text-align:center">パスワードが異なっています</p>';
-            }
-        ?>
+            <?php if(isset($_GET['error1'])){echo '<p style="color:red" style="text-align:center">パスワードが異なっています</p>';}?>
             <p style="text-align:center"><input type="password" name="password2" id="password2" class="textbox" required><br>
         </div>
         <div class="form-group">
