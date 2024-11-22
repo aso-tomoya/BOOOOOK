@@ -10,6 +10,10 @@ $item = get($db, $_GET['id']);
 $genre = getGenre($db, $item['genre_id']);
 ?>
 
+
+<!-- 完成 -->
+
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
