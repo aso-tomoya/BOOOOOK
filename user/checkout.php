@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+include ('../header.php');
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -7,9 +15,6 @@
     <title>購入</title>
 </head>
 <body>
-
-<?php include '../header.php' ?>
-
 
 <script src="../script/script.js"></script>
 </body>
