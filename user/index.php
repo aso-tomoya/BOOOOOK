@@ -1,10 +1,14 @@
 <?php
 session_start();
-session_destroy();
+// session_destroy();
 
 // ヘッダー呼び出し
 include('../header.php');
 ?>
+
+
+<!-- 完成 -->
+
 
 <!DOCTYPE html>
 <html lang="ja">
