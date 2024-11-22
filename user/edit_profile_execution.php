@@ -8,8 +8,8 @@
 <body>
 <?php
     $pdo=new PDO('mysql:host=mysql311.phy.lolipop.lan;
-    dbname=LAA1557217-boooook;charset=utf8',
-    'LAA1557217',
+    dbname=LAA1557203-boooook;charset=utf8',
+    'LAA1557203',
     'boooook');
 
     $name=$_POST['name'];

@@ -6,36 +6,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <title>ログイン</title>
 </head>
-<style>
-        .button1 {
-            width: 200px;
-            background-color: #00CCFF;
-            color: white;
-            border-radius: 25px; /* 楕円形にする */
-            padding: 8px 30px;
-            border: none;
-        }
-        .button2 {
-            width: 200px;
-            background-color: white;
-            color:#00CCFF ;
-            border-radius: 25px; /* 楕円形にする */
-            padding: 8px 30px;
-            border: 1.5px solid #00CCFF;
-        }
-        .mail{
-            width: 200px;
-            border-radius: 25px; /* 楕円形にする */
-            padding: 8px 10px;
-            border: 1.5px solid #000000;
-        }
-        .pass{
-            width: 200px;
-            border-radius: 25px; /* 楕円形にする */
-            padding: 8px 10px;
-            border: 1.5px solid #000000;
-        }
-    </style>
+
 
 <body>
     
