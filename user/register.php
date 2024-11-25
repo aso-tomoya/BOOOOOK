@@ -22,7 +22,7 @@
             padding: 4px 10px;
             border: 1.5px solid #000000;
         }
-        .postcord{
+        .postal_code{
             width: 140px;
             border-radius: 25px; /* 楕円形にする */
             padding: 4px 10px;
@@ -53,20 +53,20 @@
             <p style="text-align:center"><input type="text" name="name" id="name" class="textbox"><br>
         </div>
         <div class="form-group">
-            <label for="mail">メールアドレス*</label><br>
-            <p style="text-align:center"><input type="text" name="mail" id="mail" class="textbox"><br>
+            <label for="mail_address">メールアドレス*</label><br>
+            <p style="text-align:center"><input type="email" name="mail_address" id="mail_address" class="textbox"><br>
         </div>
         <div class="form-group">
-            <label for="password1" >パスワード*</label><br>
-            <p style="text-align:center"><input type="password" name="password1" id="password1" class="textbox"><br>
+            <label for="user_pass" >パスワード*</label><br>
+            <p style="text-align:center"><input type="password" name="user_pass" id="user_pass" class="textbox"><br>
         </div>
         <div class="form-group">
-            <label for="password2">パスワードを確認*</label><br>
-            <p style="text-align:center"><input type="password" name="password2" id="password2" class="textbox"><br>
+            <label for="confirm_pass">パスワードを確認*</label><br>
+            <p style="text-align:center"><input type="password" name="confirm_pass" id="confirm_pass" class="textbox"><br>
         </div>
         <div class="form-group">
-            <p><label for="postcord">郵便番号*</label></p>
-            <p><input type="text" name="postcord" id="postcord" class="postcord"></p>
+            <p><label for="post_code">郵便番号*</label></p>
+            <p><input type="number" name="postal_code" id="postal_code" class="postal_code"></p>
         </div>
         <div class="form-group">
             <label for="address">住所(建物名も含む)*</label><br>

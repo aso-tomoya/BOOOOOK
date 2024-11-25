@@ -12,15 +12,15 @@
     ob_start();
     
     $name=$_POST['name'];
-    $mail=$_POST['mail'];
-    $password1=$_POST['password1'];
-    $password2=$_POST['password2'];
-    $postcord=$_POST['postcord'];
+    $mail_address=$_POST['mail_address'];
+    $user_pass=$_POST['user_pass'];
+    $confirm_pass=$_POST['confirm_pass'];
+    $postal_code=$_POST['postal_code'];
     $address=$_POST['address'];
 
     var_dump($_POST);
 
-    if (empty($name) || empty($mail) || empty($password1) || empty($password2) || empty($postcode) || empty($address)) {
+    if (empty($name) || empty($mail_address) || empty($user_pass) || empty($confirm_pass) || empty($postal_code) || empty($address)) {
         header('Location: register.php?error=1');
         exit();
     }
@@ -35,8 +35,8 @@
 
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql=$pdo->prepare('INSERT INTO user(name,mail,password1,postcord,address)VALUES(?,?,?,?,?)');
-    $sql->execute([$name,$mail,$password1,$postcord,$address]);
+    $sql=$pdo->prepare('INSERT INTO user(name,mail_address,user_pass,postal_code,address)VALUES(?,?,?,?,?)');
+    $sql->execute([$name,$mail_address,$user_pass,$postal_code,$address]);
     $pdo=null;
     header('Location: login.php');
         exit();

@@ -13,12 +13,12 @@
     'boooook');
 
     $name=$_POST['name'];
-    $mail=$_POST['mail'];
-    $postcord=$_POST['postcord'];
+    $mail=$_POST['mail_address'];
+    $postcord=$_POST['postal_code'];
     $address=$_POST['address'];
 
-    $sql=$pdo->prepare('UPDATE user SET name=?,mail=?,postcord=?,address=?');
-    $result=$sql->execute([$name,$mail,$postcord,$address]);
+    $sql=$pdo->prepare('UPDATE user SET name=?,mail_address=?,postal_code=?,address=?');
+    $result=$sql->execute([$name,$mail_address,$postal_code,$address]);
     $pdo=null;
     if($result){
         header('Location: mypage.php');

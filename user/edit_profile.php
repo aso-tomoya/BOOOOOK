@@ -1,5 +1,6 @@
 <?php
 session_start();
+include '../header.php' ;
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -32,7 +33,6 @@ session_start();
         }
     </style>
 <body>
-<?php include '../header.php' ?>
 <div style="border: solid 1px #000000; padding: 20px 30px; border-width: 2px; border-radius: 10px; margin: 10px 400px;">
 
 <div class="edit_profile-container">
@@ -45,11 +45,11 @@ session_start();
         </div>
         <div class="form-group">
             <label for="mail">メールアドレス</label><br>
-            <p style="text-align:center"><input type="text" name="mail" id="mail" class="textbox" <?=$_SESSION['mail_address']?> required><br>
+            <p style="text-align:center"><input type="text" name="mail_address" id="mail_address" class="textbox" <?=$_SESSION['mail_address']?> required><br>
         </div>
         <div class="form-group">
             <p><label for="postcord">郵便番号</label></p>
-            <p><input type="text" name="postcord" id="postcord" class="postcord" <?=$_SESSION['postal_cord']?> required></p>
+            <p><input type="text" name="postcord" id="postal_code" class="postal_code" <?=$_SESSION['postal_code']?> required></p>
         </div>
         <div class="form-group">
             <label for="address">住所(建物名も含む)</label><br>
