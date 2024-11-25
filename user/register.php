@@ -66,7 +66,7 @@
         </div>
         <div class="form-group">
             <p><label for="post_code">郵便番号*</label></p>
-            <p><input type="number" name="postal_code" id="postal_code" class="postal_code"></p>
+            <p><input type="text" name="postal_code" id="postal_code" class="postal_code" pattern="\d{3}-\d{4}"></p>
         </div>
         <div class="form-group">
             <label for="address">住所(建物名も含む)*</label><br>

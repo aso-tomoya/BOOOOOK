@@ -24,7 +24,7 @@
         header('Location: register.php?error=1');
         exit();
     }
-    if ($password1 !== $password2) {
+    if ($user_pass !== $confirm_pass) {
         header('Location: register.php?error=2');
         exit();
     }
