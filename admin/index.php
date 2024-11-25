@@ -10,12 +10,11 @@
 
 <?php include '../header.php' ?>
 <form action="manage_products.php">
-    <button type= "submit" name="action" value="send">商品管理</button>
+    <input type="submit" name="pro_ad" value="商品管理">
 </form>
-
-
-
-<input type="submit" name="user_ad" value="ユーザー管理">
+<form action="manage_users.php">
+    <input type="submit" name="user_ad" value="ユーザー管理">
+</form>
 
 </body>
 </html>
