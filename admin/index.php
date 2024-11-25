@@ -11,11 +11,11 @@
 <?php include '../header.php' ?>
 <div class="container">
     <form action="manage_products.php">
-        <div class="sel_botton"><input type="submit" name="pro_ad" value="商品管理"></div>
+        <div class="sel_button"><input type="submit" name="pro_ad" value="商品管理"></div>
     </form>
 
     <form action="manage_users.php">
-        <div class="sel_botton"><input type="submit" name="user_ad" value="ユーザー管理"></div>
+        <div class="sel_button"><input type="submit" name="user_ad" value="ユーザー管理"></div>
     </form>
 </div>
 

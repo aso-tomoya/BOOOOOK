@@ -458,11 +458,3 @@ header .link {
     background-color: #009fcc;
 }
 
-.container {
-    display: flex; 
-    justify-content: space-between; 
-  }
-  
-  .sel_botton {
-    width: 50%; 
-  }
