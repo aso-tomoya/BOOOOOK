@@ -9,10 +9,6 @@
     <link rel="stylesheet" href="../css/style.css">
     <title>BOOOOOK-ログイン</title>
 </head>
-<<<<<<< HEAD
-
-=======
->>>>>>> 872279199991c0b080c1f4bbbb05721f0f6162ba
 
 <body>
 
