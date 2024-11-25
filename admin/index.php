@@ -10,7 +10,10 @@
 
 <?php include '../header.php' ?>
 
+<input type="submit" class="button" name="product_ad" value="商品管理">
 
+
+<input type="submit" class="button" name="user_ad" value="ユーザー管理">
 
 </body>
 </html>
