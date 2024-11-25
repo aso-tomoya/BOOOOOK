@@ -6,6 +6,16 @@
     <link rel="stylesheet" href="../css/style.css">
     <title>管理者トップ</title>
 </head>
+<style>
+.container {
+  grid-template-columns:  5fr auto 5fr;
+  justify-items: center; /* アイテムを中央揃え*/
+}
+.sel_button {
+  /* アイテムのスタイル */
+  width: 200px; /* アイテムの幅 */
+}
+</style>
 <body>
 
 <?php include '../header.php' ?>
