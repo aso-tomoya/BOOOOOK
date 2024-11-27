@@ -12,10 +12,10 @@
 
 <body>
 
-<div class="login-container">
-    <h2 class="login-title">アカウントを作成</h2>
+<div class="form-container">
+    <h2 class="form-title">アカウントを作成</h2>
     <p>*は必須項目</p>
-    <form action="register_execution.php" method="post" class="login-form">
+    <form action="register_execution.php" method="post" class="form">
         <div class="form-group">
             <label for="name">氏名*</label>
             <input type="text" name="name" id="name" required>

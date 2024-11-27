@@ -12,16 +12,17 @@
 
 <body>
 
-<div class="login-container">
-    <p class="login-title" >boooookサイトログイン
-    <form action="login_execution.php" method="post" class="login-form">
+<div class="form-container">
+    <h2 class="form-title" >ログイン</h2>
+
+    <form action="login_execution.php" method="post" class="form">
         <div class="form-group">
             <label for="mail">ユーザーID(メールアドレス)</label><br>
-            <input type="text" name="mail" id="mail" class="mail" required><br>
+            <input type="text" name="mail" id="mail" required><br>
         </div>
         <div class="form-group">
             <label for="password" >パスワード</label><br>
-            <input type="password" name="password" id="password" class="pass" required><br><br>
+            <input type="password" name="password" id="password" required><br><br>
         </div>
 
         <?php
@@ -40,6 +41,7 @@
 </div>
 
 <a href="../admin/login.php" class="admin-login-link">管理者としてログイン</a>
+
 
 </body>
 </html>
