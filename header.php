@@ -1,4 +1,15 @@
 <header>
+<<<<<<< HEAD
+    <h1>BOOOOOK</h1>
+    <div class="search-bar">
+        <input type="text" placeholder="検索">
+        <button>🔍</button>
+    </div>
+    <div class="cotainer">
+    <button class="login-button">ログイン</button>
+    <button class="cart-button">🛒</button>
+    </div>
+=======
 
 <?php 
 // データベースアクセス
@@ -62,4 +73,5 @@ $db=new PDO('mysql:host=mysql311.phy.lolipop.lan;
         </div>
         <?php endif; ?>
     <?php endif; ?>
+>>>>>>> 861861e4ba181289f10a339fce3bd57a90cd9ea7
 </header>
