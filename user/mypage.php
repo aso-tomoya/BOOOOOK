@@ -10,6 +10,7 @@
 
 <?php include '../header.php' ?>
 
+<a href="logout.php">ログアウト</a>
 
 <script src="../script/script.js"></script>
 </body>

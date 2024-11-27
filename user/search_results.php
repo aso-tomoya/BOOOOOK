@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+// ヘッダー呼び出し
+include ('../header.php');
+// メソッドファイル呼び出し
+include ('../method/itemGet.php')
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -8,7 +17,7 @@
 </head>
 <body>
 
-<?php include '../header.php' ?>
+
 <div class="container">
     <h2>「〇〇〇」の検索結果</h2>
     <p>〇〇件</p>

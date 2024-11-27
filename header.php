@@ -58,7 +58,16 @@ $db=new PDO('mysql:host=mysql311.phy.lolipop.lan;
 <!-- 表示するページ判定 -->
             <?php if(!(strpos($_SERVER['PHP_SELF'], '/checkout') || strpos($_SERVER['PHP_SELF'], '/change_address') || strpos($_SERVER['PHP_SELF'], 'manage_payment') || strpos($_SERVER['PHP_SELF'], '/login') || strpos($_SERVER['PHP_SELF'], '/register') || strpos($_SERVER['PHP_SELF'], '/edit_profile') || strpos($_SERVER['PHP_SELF'], '/cart'))): ?>
                 <a href="cart.php">
-                    <button class="cart-button">🛒</button>
+                    <button class="cart-button">🛒
+                        <!-- カートの中身の個数を表示 -->
+                        <?php
+                        if (isset($_SESSION['cart'])) {
+                            echo count($_SESSION['cart']);
+                        } else {
+                            echo '0';
+                        }
+                        ?>
+                    </button>
                 </a>
             <?php endif; ?>
         </div>
