@@ -1,6 +1,7 @@
 <!-- 完成 -->
 
 <?php include('../header.php'); ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>

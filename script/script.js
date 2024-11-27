@@ -1,20 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const backToTopButton = document.getElementById('back-to-top');
-
-    // スクロールイベントの設定
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) { // スクロールが300pxを超えた場合
-            backToTopButton.classList.add('show');
-        } else {
-            backToTopButton.classList.remove('show');
-        }
-    });
-
-    // クリックイベントでページトップにスクロール
-    backToTopButton.addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-});
 
 function goToItemPage(itemId){
     window.location.href = `product.php?id=${itemId}`;
@@ -106,6 +89,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const password1 = document.getElementById("password1");
     const password2 = document.getElementById("password2");
     const errorMessage = document.getElementById("password-error");
+    const submitButton = document.querySelector(".button1"); // ボタンを取得
+
+    // 初期状態でボタンを無効にする
+    submitButton.disabled = true;
 
     // パスワード一致チェック
     function checkPasswordsMatch() {
@@ -113,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (password2.value === "") {
             errorMessage.textContent = ""; // エラーメッセージをクリア
             password2.style.borderColor = ""; // デフォルトのスタイルに戻す
+            submitButton.disabled = true; // ボタンを無効化
             return;
         }
 
@@ -120,9 +108,11 @@ document.addEventListener("DOMContentLoaded", function () {
             errorMessage.textContent = "パスワードが一致しません。";
             errorMessage.style.color = "red";
             password2.style.borderColor = "red";
+            submitButton.disabled = true; // ボタンを無効化
         } else {
             errorMessage.textContent = ""; // エラーメッセージをクリア
             password2.style.borderColor = ""; // デフォルトのスタイルに戻す
+            submitButton.disabled = false; // ボタンを有効化
         }
     }
 

@@ -1,6 +1,8 @@
 <!-- ヘッダー呼び出し -->
 <?php include('../header.php'); ?>
 
+<!-- 完成 -->
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -47,7 +49,7 @@
             <input type="text" name="address" id="address" required>
         </div>
 
-        <?php if(isset($_GET['error2'])){ echo '<p style="color:red;">未入力の項目があります。</p>'; } ?>
+        <?php if(isset($_GET['error']) && $_GET['error'] == 'duplicate'){ echo '<p style="color:red;">このメールアドレスは既に登録されています。</p>'; } ?>
 
         <div class="form-group">
             <input type="submit" class="button1" name="action" value="アカウント作成">

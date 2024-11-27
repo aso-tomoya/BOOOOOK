@@ -1,4 +1,5 @@
  <?php
+//  完成
 
 if(isset($_POST['back'])){
     header('Location: mypage.php');
@@ -14,14 +15,21 @@ $mail=$_POST['mail'];
 $postcord=$_POST['postcord'];
 $address=$_POST['address'];
 
-$sql=$pdo->prepare('UPDATE user SET name=?,mail=?,postcord=?,address=?');
-$result=$sql->execute([$name,$mail,$postcord,$address]);
-$pdo=null;
-if($result){
-    header('Location: mypage.php');
+// メールアドレスの重複チェック
+$sql = $pdo->prepare('SELECT * FROM user WHERE mail_address = ?');
+$sql->execute([$mail]);
+$existingUser = $sql->fetch();
+
+if ($existingUser) {
+    // メールアドレスが重複している場合
+    header('Location: register.php?error=duplicate'); // 登録画面にリダイレクト（エラーを表示）
     exit();
-}else{
-    header('Location: edit_profile.php');
+} else {
+    // 新規登録処理
+    $sql=$pdo->prepare('UPDATE user SET name=?,mail=?,postcord=?,address=?');
+    $sql->execute([$name,$mail,$postcord,$address]);
+    $pdo=null;
+    header('Location: mypage.php');
     exit();
 }
 ?>
