@@ -101,3 +101,34 @@ function updateCartButton() {
         })
         .catch(error => console.error("通信エラー: ", error));
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const password1 = document.getElementById("password1");
+    const password2 = document.getElementById("password2");
+    const errorMessage = document.getElementById("password-error");
+
+    // パスワード一致チェック
+    function checkPasswordsMatch() {
+        // password2が未入力の場合、チェックを行わない
+        if (password2.value === "") {
+            errorMessage.textContent = ""; // エラーメッセージをクリア
+            password2.style.borderColor = ""; // デフォルトのスタイルに戻す
+            return;
+        }
+
+        if (password1.value !== password2.value) {
+            errorMessage.textContent = "パスワードが一致しません。";
+            errorMessage.style.color = "red";
+            password2.style.borderColor = "red";
+        } else {
+            errorMessage.textContent = ""; // エラーメッセージをクリア
+            password2.style.borderColor = ""; // デフォルトのスタイルに戻す
+        }
+    }
+
+    // 入力のたびにパスワードをチェック
+    password1.addEventListener("input", checkPasswordsMatch);
+    password2.addEventListener("input", checkPasswordsMatch);
+});
+
+// ユーザー登録成功のメッセージ表示させる

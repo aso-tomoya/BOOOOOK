@@ -35,9 +35,7 @@
 
     <div class="register-section">
         <h3 >アカウントをお持ちでない方</h3>
-        <form action="register.php">
-        <input  type="submit" class="button2" name="action" value="新規会員登録" >
-        </form>
+        <a href="register.php"><input type="submit" class="button2" name="action" value="新規会員登録"></a>
     </div>
 </div>
 
