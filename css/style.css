@@ -169,6 +169,20 @@ header .link {
     transform: scale(1.05);
 }
 
+.search .item-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+    gap: 60px;
+    padding: 50px;
+}
+
+.search .item {
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .item img {
     width: 180px;
     background-color: #cccccc;

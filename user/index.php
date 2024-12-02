@@ -38,9 +38,9 @@ include_once('../header.php');
             $rank = 1;
             foreach ($rankingItems as $item) {
                 // 商品情報を取得
-                $itemName = htmlspecialchars($item['item_name'], ENT_QUOTES, 'UTF-8');
+                $itemName = $item['item_name'];
                 $itemPrice = number_format($item['item_price']);  // 価格をカンマ区切りに
-                $itemImg = htmlspecialchars($item['item_img'], ENT_QUOTES, 'UTF-8');
+                $itemImg = $item['item_img'];
 
                 $imgClass = $rank <= 3 ? 'img-top-3' : 'img';
 
@@ -76,9 +76,9 @@ include_once('../header.php');
 
                 foreach ($pickupItems as $item) {
                     // 商品情報を取得
-                    $itemName = htmlspecialchars($item['item_name'], ENT_QUOTES, 'UTF-8');
+                    $itemName = $item['item_name'];
                     $itemPrice = number_format($item['item_price']);  // 価格をカンマ区切りに
-                    $itemImg = htmlspecialchars($item['item_img'], ENT_QUOTES, 'UTF-8');
+                    $itemImg = $item['item_img'];
                 
                     echo '<div class="item" onclick="goToItemPage('.$item['item_id'].')">';
                     echo '<img src="../img/'.$itemImg.'" alt="'.$itemName.'" class="img">';  // 商品画像
