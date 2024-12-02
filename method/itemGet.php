@@ -23,7 +23,7 @@ function getGenre($db, $id){
 #ランキング用
 function getRanking($db)
 {
-    $sql = $db->prepare('SELECT * FROM item ORDER BY salse_count DESC LIMIT 10');
+    $sql = $db->prepare('SELECT * FROM item ORDER BY sales_count DESC LIMIT 10');
     $sql->execute();
     return $sql->fetchAll(PDO::FETCH_ASSOC);  // 上位10件の商品情報を配列で返す
 }
@@ -61,30 +61,30 @@ function getPickup($userId, $db)
 
 
 #商品を検索
-function itemSearch($db, $word, $sortBy = 'default') {
+function itemSearch($db, $word, $sortBy) {
     // 検索ワードが空でない場合のみ処理を実行
     if (!empty($word)) {
         // 並べ替え条件を動的に構築
         $orderBy = '';
         switch ($sortBy) {
             case 'sales_desc': // 売上個数の多い順
-                $orderBy = 'ORDER BY sales_count DESC';
+                $orderBy = 'sales_count DESC';
                 break;
             case 'price_desc': // 価格の高い順
-                $orderBy = 'ORDER BY price DESC';
+                $orderBy = 'item_price DESC';
                 break;
             case 'price_asc': // 価格の低い順
-                $orderBy = 'ORDER BY price ASC';
+                $orderBy = 'item_price ASC';
                 break;
             case 'alphabetical': // 50音順 (商品名の昇順)
-                $orderBy = 'ORDER BY item_name ASC';
+                $orderBy = 'item_name ASC';
                 break;
             default: // デフォルトでは人気順
-                $orderBy = 'ORDER BY sales_count DESC';
+                $orderBy = 'sales_count DESC';
         }
 
         // 商品名(item_name)または著者名(author)に対してLIKE検索を使用
-        $query = "SELECT * FROM item WHERE item_name LIKE ? OR author LIKE ? $orderBy";
+        $query = "SELECT * FROM item WHERE item_name LIKE ? OR author LIKE ? ORDER BY ".$orderBy;
         $sql = $db->prepare($query);
 
         // 検索ワードを前後にワイルドカード（%）を付けて部分一致検索

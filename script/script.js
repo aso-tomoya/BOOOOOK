@@ -85,42 +85,6 @@ function updateCartButton() {
         .catch(error => console.error("通信エラー: ", error));
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    const password1 = document.getElementById("password1");
-    const password2 = document.getElementById("password2");
-    const errorMessage = document.getElementById("password-error");
-    const submitButton = document.querySelector(".button1"); // ボタンを取得
-
-    // 初期状態でボタンを無効にする
-    submitButton.disabled = true;
-
-    // パスワード一致チェック
-    function checkPasswordsMatch() {
-        // password2が未入力の場合、チェックを行わない
-        if (password2.value === "") {
-            errorMessage.textContent = ""; // エラーメッセージをクリア
-            password2.style.borderColor = ""; // デフォルトのスタイルに戻す
-            submitButton.disabled = true; // ボタンを無効化
-            return;
-        }
-
-        if (password1.value !== password2.value) {
-            errorMessage.textContent = "パスワードが一致しません。";
-            errorMessage.style.color = "red";
-            password2.style.borderColor = "red";
-            submitButton.disabled = true; // ボタンを無効化
-        } else {
-            errorMessage.textContent = ""; // エラーメッセージをクリア
-            password2.style.borderColor = ""; // デフォルトのスタイルに戻す
-            submitButton.disabled = false; // ボタンを有効化
-        }
-    }
-
-    // 入力のたびにパスワードをチェック
-    password1.addEventListener("input", checkPasswordsMatch);
-    password2.addEventListener("input", checkPasswordsMatch);
-});
-
 // ジャンル検索のドロップダウンリスト
 document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('input-search');
@@ -142,3 +106,11 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error("検索バーまたはドロップダウン要素が見つかりません");
     }
 });
+
+// 検索結果並べ替え
+function updateSort() {
+    const sortBy = document.getElementById('sortBy').value; // 現在の並べ替え条件
+    const urlParams = new URLSearchParams(window.location.search); // 現在のURLクエリパラメータ
+    urlParams.set('sortBy', sortBy); // 並べ替え条件を追加または更新
+    window.location.search = urlParams.toString(); // ページをリロード
+}

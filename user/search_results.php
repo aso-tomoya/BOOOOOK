@@ -7,7 +7,10 @@ include_once ('../header.php');
 include_once ('../method/itemGet.php');
 
 $word = isset($_GET['searchWord']) ? $_GET['searchWord'] : $getGenre($db, $_GET['genre'])['genre_name'];
-$items = itemSearch($db, $word);
+$sortBy = isset($_GET['sortBy']) ? $_GET['sortBy'] : 'sales_desc';
+
+$items = itemSearch($db, $word, $sortBy);
+
 ?>
 
 <!DOCTYPE html>
@@ -23,20 +26,18 @@ $items = itemSearch($db, $word);
 
 <div class="container">
     <h2>" <?=$word?> "の検索結果</h2>
-    <p><?=count($items)?>件</p>
+    <?=count($items)?>件
     <div class="sort-options">
-        
-        <select name="sortBy">
-            <option value="sales_desc">人気順</option>
-            <option value="price_desc">高い順</option>
-            <option value="price_asc">安い順</option>
-            <option value="alphabetical">50音順</option>
+        <select name="sortBy" id="sortBy" onchange="updateSort()">
+            <option value="sales_desc" <?= $sortBy === 'sales_desc' ? 'selected' : '' ?>>人気順</option>
+            <option value="price_desc" <?= $sortBy === 'price_desc' ? 'selected' : '' ?>>高い順</option>
+            <option value="price_asc" <?= $sortBy === 'price_asc' ? 'selected' : '' ?>>安い順</option>
+            <option value="alphabetical" <?= $sortBy === 'alphabetical' ? 'selected' : '' ?>>50音順</option>
         </select>
-
     </div>
     <div class="container">
         <div class="search">
-            <div class="item-list">
+            <div class="item-list" id="itemList">
                 <?php
                 
                 foreach ($items as $item) {

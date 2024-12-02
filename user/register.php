@@ -57,6 +57,42 @@
     </form>
 </div>
 
-<script src="../script/script.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const password1 = document.getElementById("password1");
+    const password2 = document.getElementById("password2");
+    const errorMessage = document.getElementById("password-error");
+    const submitButton = document.querySelector(".button1"); // ボタンを取得
+
+    // 初期状態でボタンを無効にする
+    submitButton.disabled = true;
+
+    // パスワード一致チェック
+    function checkPasswordsMatch() {
+        // password2が未入力の場合、チェックを行わない
+        if (password2.value === "") {
+            errorMessage.textContent = ""; // エラーメッセージをクリア
+            password2.style.borderColor = ""; // デフォルトのスタイルに戻す
+            submitButton.disabled = true; // ボタンを無効化
+            return;
+        }
+
+        if (password1.value !== password2.value) {
+            errorMessage.textContent = "パスワードが一致しません。";
+            errorMessage.style.color = "red";
+            password2.style.borderColor = "red";
+            submitButton.disabled = true; // ボタンを無効化
+        } else {
+            errorMessage.textContent = ""; // エラーメッセージをクリア
+            password2.style.borderColor = ""; // デフォルトのスタイルに戻す
+            submitButton.disabled = false; // ボタンを有効化
+        }
+    }
+
+    // 入力のたびにパスワードをチェック
+    password1.addEventListener("input", checkPasswordsMatch);
+    password2.addEventListener("input", checkPasswordsMatch);
+});
+</script>
 </body>
 </html>
