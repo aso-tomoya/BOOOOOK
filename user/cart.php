@@ -3,7 +3,7 @@ session_start();
 session_destroy();
 
 // ヘッダー呼び出し
-include('../header.php');
+include_once('../header.php');
 
 // カート情報をセッションから取得
 $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
@@ -22,7 +22,7 @@ $item_cnt = array_count_values($cart);
 <body>
 
 <!-- メソッドファイル呼び出し -->
-<?php include('../method/itemGet.php') ?>
+<?php include_once('../method/itemGet.php') ?>
 
 <main class="cart-container">
     <h1 class="cart-title">カート一覧</h1>

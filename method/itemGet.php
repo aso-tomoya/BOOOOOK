@@ -7,6 +7,12 @@ function get($db, $id)
     return $sql->fetch(PDO::FETCH_ASSOC);
 }
 
+#全ジャンル取得
+function getAllGenre($db){
+    $sql = $db->query('SELECT * FROM genre ');
+    return $sql->fetchAll(PDO::FETCH_ASSOC);
+}
+
 #ジャンル名取得
 function getGenre($db, $id){
     $sql = $db->prepare('SELECT genre_name FROM genre where genre_id = ?');
@@ -51,4 +57,24 @@ function getPickup($userId, $db)
     }
 
     return $sql->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
+#商品を検索
+function itemSearch($db, $word) {
+    // 検索ワードが空でない場合のみ処理を実行
+    if (!empty($word)) {
+        // 商品名(item_name)または著者名(author)に対してLIKE検索を使用
+        $sql = $db->prepare('SELECT * FROM item WHERE item_name LIKE ? OR author LIKE ?');
+
+        // 検索ワードを前後にワイルドカード（%）を付けて部分一致検索
+        $searchTerm = "%" . $word . "%";
+        $sql->execute([$searchTerm, $searchTerm]);
+
+        // 検索結果を返す
+        return $sql->fetchAll(PDO::FETCH_ASSOC);
+    } else {
+        // ワードが空の場合は何も検索しない
+        return [];
+    }
 }

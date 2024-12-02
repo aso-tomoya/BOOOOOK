@@ -1,5 +1,5 @@
 <!-- ヘッダー呼び出し -->
-<?php include('../header.php'); ?>
+<?php include_once('../header.php'); ?>
 
 <!-- 完成 -->
 

@@ -2,8 +2,8 @@
 session_start();
 
 // ヘッダー呼び出し
-include('../header.php');
-include('../method/itemGet.php');
+include_once('../header.php');
+include_once('../method/itemGet.php');
 
 // 商品情報取得
 $item = get($db, $_GET['id']);

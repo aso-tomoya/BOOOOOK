@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include ('../header.php');
+include_once ('../header.php');
 
 ?>
 <!DOCTYPE html>
@@ -15,7 +15,7 @@ include ('../header.php');
 <body>
 <!-- ユーザー情報取得 -->
 <?php
-include ('../method/userGet.php');
+include_once ('../method/userGet.php');
 $user = getUser($db, $_SESSION['user_id']);
 ?>
 
@@ -39,6 +39,9 @@ $user = getUser($db, $_SESSION['user_id']);
             <label for="address">住所(建物名も含む)</label>
             <input type="text" name="address" id="address" value="<?=$user['address']?>" required>
         </div>
+        
+        <?php if(isset($_GET['error']) && $_GET['error'] == 'duplicate'){ echo '<p style="color:red;">このメールアドレスは既に登録されています。</p>'; } ?>
+
         <div class="button-container">
         <input type="submit" class="button2" name="back" value="編集せずに戻る">
         <input type="submit" class="button1" value="完了">

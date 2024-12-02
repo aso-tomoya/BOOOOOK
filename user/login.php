@@ -1,6 +1,6 @@
 <!-- 完成 -->
 
-<?php include('../header.php'); ?>
+<?php include_once('../header.php'); ?>
 
 <!DOCTYPE html>
 <html lang="ja">

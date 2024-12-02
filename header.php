@@ -7,6 +7,9 @@ $db=new PDO('mysql:host=mysql311.phy.lolipop.lan;
             'LAA1557203',
             'boooook');
 
+#ジャンルを取得
+include_once ('method/itemGet.php');
+$genres=getAllGenre($db);
 ?>
 
 <!-- タイトルロゴ -->
@@ -15,10 +18,24 @@ $db=new PDO('mysql:host=mysql311.phy.lolipop.lan;
 <!-- 検索バー -->
     <!-- 表示するページ判定 -->
     <?php if(!(strpos($_SERVER['PHP_SELF'], '/admin/') || strpos($_SERVER['PHP_SELF'], '/checkout') || strpos($_SERVER['PHP_SELF'], '/change_address') || strpos($_SERVER['PHP_SELF'], '/manage_payment') || strpos($_SERVER['PHP_SELF'], '/login') || strpos($_SERVER['PHP_SELF'], '/register') || strpos($_SERVER['PHP_SELF'], '/edit_profile'))): ?>
+        <form action="search_results.php" method="get">
             <div class="search-bar">
-                <input type="text" placeholder="検索">
-                <button>🔍</button>
+                    <input type="text" name="searchWord" placeholder="商品を検索" id="input-search">
+                    <input type="submit" value="🔍">
             </div>
+            <!-- ジャンル検索のドロップダウンリスト -->
+            <div id="genre-dropdown" class="dropdown hidden">
+                <ul>
+                    <?php foreach ($genres as $genre): ?>
+                        <li>
+                            <a href="search_results.php?genre=<?= $genre['genre_id']; ?>">
+                                <?=$genre['genre_name']; ?>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </form>
     <?php endif; ?>
 
 <!-- 各種ボタンコンテナ -->

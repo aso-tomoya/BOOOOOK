@@ -3,7 +3,7 @@ session_start();
 // session_destroy();
 
 // ヘッダー呼び出し
-include('../header.php');
+include_once('../header.php');
 ?>
 
 
@@ -22,7 +22,7 @@ include('../header.php');
 <body>
 
 <!-- メソッドファイル呼び出し -->
-<?php include ('../method/itemGet.php'); ?>
+<?php include_once ('../method/itemGet.php'); ?>
 
 <!-- ランキング -->
 <div class="container">

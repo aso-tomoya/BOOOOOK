@@ -41,7 +41,7 @@ header .search-bar input[type="text"] {
     font-size: 20px;
 }
 
-header .search-bar button {
+header .search-bar input[type="submit"] {
     background-color: transparent;
     border: none;
     margin-left: -50px;
@@ -62,6 +62,53 @@ header .cart-button{
     margin: 5px;
     height: 40px;
 }
+
+/* formのデザインをリセット */
+header form {
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+}
+
+/* ジャンル検索のドロップダウンリスト */
+.dropdown {
+    position: absolute; /* レイアウトから切り離す */
+    background-color: #ffffff; /* 背景色を白に */
+    border: 1px solid #ddd; /* 淡い枠線 */
+    border-radius: 8px; /* 角を丸く */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* ソフトな影を追加 */
+    width: 300px; /* 必要に応じて調整 */
+    z-index: 1000; /* 最前面に表示 */
+    list-style: none; /* 点を消す */
+    margin: 0;
+    top: 65px; /* 必要に応じて調整 */
+    left: 250px; /* 必要に応じて調整 */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* アニメーション効果 */
+}
+
+.dropdown ul {
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown li:hover {
+    background-color: #f0f0f0;
+}
+
+.hidden {
+    display: none;
+}
+
+
 
 header .link {
     color: #ff6600;
@@ -86,7 +133,6 @@ header .link {
 .pickup h2 {
     font-size: 35px;
     text-align: center;
-    margin-bottom: 80px;
 }
 
 .ranking .item-list {
