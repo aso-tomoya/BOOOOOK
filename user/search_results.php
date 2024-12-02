@@ -6,7 +6,7 @@ include_once ('../header.php');
 // メソッドファイル呼び出し
 include_once ('../method/itemGet.php');
 
-$word = isset($_GET['searchWord']) ? $_GET['searchWord'] : $getGenre($db, $_GET['genre'])['genre_name'];
+$word = isset($_GET['searchWord']) ? $_GET['searchWord'] : $getGenre($db, $_GET['genre'])['genre_name'] ?? '';
 $sortBy = isset($_GET['sortBy']) ? $_GET['sortBy'] : 'sales_desc';
 
 $items = itemSearch($db, $word, $sortBy);
@@ -28,6 +28,7 @@ $items = itemSearch($db, $word, $sortBy);
     <h2>" <?=$word?> "の検索結果</h2>
     <?=count($items)?>件
     <div class="sort-options">
+        表示：
         <select name="sortBy" id="sortBy" onchange="updateSort()">
             <option value="sales_desc" <?= $sortBy === 'sales_desc' ? 'selected' : '' ?>>人気順</option>
             <option value="price_desc" <?= $sortBy === 'price_desc' ? 'selected' : '' ?>>高い順</option>

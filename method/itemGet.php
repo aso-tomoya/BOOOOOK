@@ -94,8 +94,9 @@ function itemSearch($db, $word, $sortBy) {
         // 検索結果を返す
         return $sql->fetchAll(PDO::FETCH_ASSOC);
     } else {
-        // ワードが空の場合は何も検索しない
-        return [];
+        // ワードが空の場合は全商品表示
+        $sql = $db->query('SELECT * FROM item');
+        return $sql->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 

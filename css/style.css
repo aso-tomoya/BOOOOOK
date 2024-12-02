@@ -592,7 +592,7 @@ header .link {
     color: #333;
     cursor: pointer;
     transition: all 0.3s ease;
-    width: 200px;
+    width: 100px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
