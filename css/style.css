@@ -43,11 +43,7 @@ header .search-bar input[type="text"] {
 header .search-bar input[type="submit"] {
     background-color: transparent;
     border: none;
-<<<<<<< HEAD:script/style.css
-    margin-left: -35px;
-=======
     margin-left: -50px;
->>>>>>> 861861e4ba181289f10a339fce3bd57a90cd9ea7:css/style.css
     cursor: pointer;
     font-size: 20px;
 }
@@ -66,10 +62,7 @@ header .cart-button{
     height: 40px;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD:script/style.css
-=======
-=======
+
 /* formのデザインをリセット */
 header form {
     margin: 0;
@@ -117,7 +110,7 @@ header form {
 
 
 
->>>>>>> origin/tomoya
+
 header .link {
     color: #ff6600;
     text-decoration: none;
@@ -128,7 +121,7 @@ header .link {
     text-align: right;
 }
 
->>>>>>> 861861e4ba181289f10a339fce3bd57a90cd9ea7:css/style.css
+
 .container {
     padding: 20px;
 }
@@ -536,8 +529,7 @@ header .link {
     background-color: #009fcc;
 }
 
-<<<<<<< HEAD
-=======
+
 .sort-options {
     margin-bottom: 20px;
     text-align: center;
@@ -568,4 +560,4 @@ header .link {
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
->>>>>>> origin/tomoya
+

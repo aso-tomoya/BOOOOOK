@@ -24,7 +24,7 @@
 
         <?php
             if(isset($_GET['error'])){
-                echo '<p style="color:red" >メールアドレスかパスワードが正しくありません。';
+                echo '<p style="color:red" >管理者IDかパスワードが正しくありません。';
             }    
         ?>
 
