@@ -8,7 +8,12 @@
 </head>
 <body>
 
+<<<<<<< HEAD
 <?php include '../header.php';
+=======
+<?php include_once '../header.php' ?>
+
+>>>>>>> origin/tomoya
 
 $pdo=new PDO('mysql:host=mysql311.phy.lolipop.lan;
 dbname=LAA1557203-boooook;charset=utf8',

@@ -3,7 +3,7 @@ session_start();
 // session_destroy();
 
 // ヘッダー呼び出し
-include('../header.php');
+include_once('../header.php');
 ?>
 
 
@@ -22,7 +22,7 @@ include('../header.php');
 <body>
 
 <!-- メソッドファイル呼び出し -->
-<?php include ('../method/itemGet.php'); ?>
+<?php include_once ('../method/itemGet.php'); ?>
 
 <!-- ランキング -->
 <div class="container">
@@ -38,9 +38,9 @@ include('../header.php');
             $rank = 1;
             foreach ($rankingItems as $item) {
                 // 商品情報を取得
-                $itemName = htmlspecialchars($item['item_name'], ENT_QUOTES, 'UTF-8');
+                $itemName = $item['item_name'];
                 $itemPrice = number_format($item['item_price']);  // 価格をカンマ区切りに
-                $itemImg = htmlspecialchars($item['item_img'], ENT_QUOTES, 'UTF-8');
+                $itemImg = $item['item_img'];
 
                 $imgClass = $rank <= 3 ? 'img-top-3' : 'img';
 
@@ -76,9 +76,9 @@ include('../header.php');
 
                 foreach ($pickupItems as $item) {
                     // 商品情報を取得
-                    $itemName = htmlspecialchars($item['item_name'], ENT_QUOTES, 'UTF-8');
+                    $itemName = $item['item_name'];
                     $itemPrice = number_format($item['item_price']);  // 価格をカンマ区切りに
-                    $itemImg = htmlspecialchars($item['item_img'], ENT_QUOTES, 'UTF-8');
+                    $itemImg = $item['item_img'];
                 
                     echo '<div class="item" onclick="goToItemPage('.$item['item_id'].')">';
                     echo '<img src="../img/'.$itemImg.'" alt="'.$itemName.'" class="img">';  // 商品画像
@@ -99,5 +99,24 @@ include('../header.php');
 </div>
 
 <script src="../script/script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const backToTopButton = document.getElementById('back-to-top');
+
+    // スクロールイベントの設定
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) { // スクロールが300pxを超えた場合
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+    });
+
+    // クリックイベントでページトップにスクロール
+    backToTopButton.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+});
+</script>
 </body>
 </html>

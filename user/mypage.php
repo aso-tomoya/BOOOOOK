@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<?php include '../header.php' ?>
+<?php include_once '../header.php' ?>
 
 <a href="logout.php">ログアウト</a>
 

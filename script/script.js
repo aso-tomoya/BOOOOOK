@@ -1,20 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const backToTopButton = document.getElementById('back-to-top');
-
-    // スクロールイベントの設定
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) { // スクロールが300pxを超えた場合
-            backToTopButton.classList.add('show');
-        } else {
-            backToTopButton.classList.remove('show');
-        }
-    });
-
-    // クリックイベントでページトップにスクロール
-    backToTopButton.addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-});
 
 function goToItemPage(itemId){
     window.location.href = `product.php?id=${itemId}`;
@@ -100,4 +83,34 @@ function updateCartButton() {
             }
         })
         .catch(error => console.error("通信エラー: ", error));
+}
+
+// ジャンル検索のドロップダウンリスト
+document.addEventListener('DOMContentLoaded', function () {
+    const searchInput = document.getElementById('input-search');
+    const dropdown = document.querySelector('.dropdown');
+
+    if (searchInput && dropdown) {
+        // 検索バーをクリックしたらドロップダウンを表示
+        searchInput.addEventListener('focus', function () {
+            dropdown.classList.remove('hidden');
+        });
+
+        // 検索バー外をクリックしたらドロップダウンを非表示
+        document.addEventListener('click', function (event) {
+            if (!dropdown.contains(event.target) && event.target !== searchInput) {
+                dropdown.classList.add('hidden');
+            }
+        });
+    } else {
+        console.error("検索バーまたはドロップダウン要素が見つかりません");
+    }
+});
+
+// 検索結果並べ替え
+function updateSort() {
+    const sortBy = document.getElementById('sortBy').value; // 現在の並べ替え条件
+    const urlParams = new URLSearchParams(window.location.search); // 現在のURLクエリパラメータ
+    urlParams.set('sortBy', sortBy); // 並べ替え条件を追加または更新
+    window.location.search = urlParams.toString(); // ページをリロード
 }

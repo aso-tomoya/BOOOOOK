@@ -2,8 +2,8 @@
 session_start();
 
 // ヘッダー呼び出し
-include('../header.php');
-include('../method/itemGet.php');
+include_once('../header.php');
+include_once('../method/itemGet.php');
 
 // 商品情報取得
 $item = get($db, $_GET['id']);
@@ -53,5 +53,24 @@ $genre = getGenre($db, $item['genre_id']);
 </div>
 
 <script src="../script/script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const backToTopButton = document.getElementById('back-to-top');
+
+    // スクロールイベントの設定
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) { // スクロールが300pxを超えた場合
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+    });
+
+    // クリックイベントでページトップにスクロール
+    backToTopButton.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+});
+</script>
 </body>
 </html>

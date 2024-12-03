@@ -3,7 +3,7 @@ session_start();
 session_destroy();
 
 // ヘッダー呼び出し
-include('../header.php');
+include_once('../header.php');
 
 // カート情報をセッションから取得
 $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
@@ -22,7 +22,7 @@ $item_cnt = array_count_values($cart);
 <body>
 
 <!-- メソッドファイル呼び出し -->
-<?php include('../method/itemGet.php') ?>
+<?php include_once('../method/itemGet.php') ?>
 
 <main class="cart-container">
     <h1 class="cart-title">カート一覧</h1>
@@ -72,5 +72,24 @@ $item_cnt = array_count_values($cart);
 </div>
 
 <script src="../script/script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const backToTopButton = document.getElementById('back-to-top');
+
+    // スクロールイベントの設定
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) { // スクロールが300pxを超えた場合
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+    });
+
+    // クリックイベントでページトップにスクロール
+    backToTopButton.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+});
+</script>
 </body>
 </html>

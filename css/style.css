@@ -40,7 +40,7 @@ header .search-bar input[type="text"] {
     font-size: 20px;
 }
 
-header .search-bar button {
+header .search-bar input[type="submit"] {
     background-color: transparent;
     border: none;
 <<<<<<< HEAD:script/style.css
@@ -66,8 +66,58 @@ header .cart-button{
     height: 40px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD:script/style.css
 =======
+=======
+/* formのデザインをリセット */
+header form {
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+}
+
+/* ジャンル検索のドロップダウンリスト */
+.dropdown {
+    position: absolute; /* レイアウトから切り離す */
+    background-color: #ffffff; /* 背景色を白に */
+    border: 1px solid #ddd; /* 淡い枠線 */
+    border-radius: 8px; /* 角を丸く */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* ソフトな影を追加 */
+    width: 300px; /* 必要に応じて調整 */
+    z-index: 1000; /* 最前面に表示 */
+    list-style: none; /* 点を消す */
+    margin: 0;
+    top: 65px; /* 必要に応じて調整 */
+    left: 30%; /* 必要に応じて調整 */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* アニメーション効果 */
+}
+
+.dropdown ul {
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown li:hover {
+    background-color: #f0f0f0;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+>>>>>>> origin/tomoya
 header .link {
     color: #ff6600;
     text-decoration: none;
@@ -92,7 +142,6 @@ header .link {
 .pickup h2 {
     font-size: 35px;
     text-align: center;
-    margin-bottom: 80px;
 }
 
 .ranking .item-list {
@@ -127,6 +176,20 @@ header .link {
 .item:hover {
     cursor: pointer;
     transform: scale(1.05);
+}
+
+.search .item-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+    gap: 60px;
+    padding: 50px;
+}
+
+.search .item {
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .item img {
@@ -199,7 +262,7 @@ header .link {
 }
 
 .button1 {
-    width: 150px;
+    /* width: 150px; */
     background-color: #00CCFF;
     color: white;
     border-radius: 25px;
@@ -220,9 +283,16 @@ header .link {
     cursor: pointer;
 }
 
-.login-container {
+.button-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    gap: 50px;
+}
+
+.form-container {
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     margin: 50px auto;
     background-color: white;
     padding: 20px;
@@ -231,17 +301,18 @@ header .link {
     text-align: center;
 }
 
-.login-title {
+.form-title {
     font-size: 24px;
     margin-bottom: 30px;
     color: #333;
+    text-align: center;
 }
 
-.login-form .form-group {
+.form .form-group {
     margin-bottom: 20px;
 }
 
-.login-form label {
+.form label {
     display: block;
     text-align: left;
     font-weight: bold;
@@ -249,11 +320,12 @@ header .link {
     color: #333;
 }
 
-.login-form input[type="text"],
-.login-form input[type="password"] {
+.form input[type="text"],
+.form input[type="password"],
+.form input[type="email"] {
     width: 100%;
     padding: 12px;
-    font-size: 16px;
+    font-size: 14px;
     border-radius: 5px;
     border: 1px solid #ccc;
     box-sizing: border-box;
@@ -464,3 +536,36 @@ header .link {
     background-color: #009fcc;
 }
 
+<<<<<<< HEAD
+=======
+.sort-options {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sort-options select {
+    appearance: none; /* ブラウザのデフォルトスタイルを無効化 */
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sort-options select:hover {
+    background-color: #f1f1f1;
+    border-color: #888;
+}
+
+.sort-options select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+>>>>>>> origin/tomoya

@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<?php include ('../header.php'); ?>
+<?php include_once ('../header.php'); ?>
 
 
 <script src="../script/script.js"></script>

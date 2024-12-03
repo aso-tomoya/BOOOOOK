@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<?php include '../header.php' ?>
+<?php include_once '../header.php' ?>
 
 <div class="login-container">
     
