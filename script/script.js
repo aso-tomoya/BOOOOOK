@@ -86,26 +86,26 @@ function updateCartButton() {
 }
 
 // ジャンル検索のドロップダウンリスト
-document.addEventListener('DOMContentLoaded', function () {
-    const searchInput = document.getElementById('input-search');
-    const dropdown = document.querySelector('.dropdown');
+// document.addEventListener('DOMContentLoaded', function () {
+//     const searchInput = document.getElementById('input-search');
+//     const dropdown = document.querySelector('.dropdown');
 
-    if (searchInput && dropdown) {
-        // 検索バーをクリックしたらドロップダウンを表示
-        searchInput.addEventListener('focus', function () {
-            dropdown.classList.remove('hidden');
-        });
+//     if (searchInput && dropdown) {
+//         // 検索バーをクリックしたらドロップダウンを表示
+//         searchInput.addEventListener('focus', function () {
+//             dropdown.classList.remove('hidden');
+//         });
 
-        // 検索バー外をクリックしたらドロップダウンを非表示
-        document.addEventListener('click', function (event) {
-            if (!dropdown.contains(event.target) && event.target !== searchInput) {
-                dropdown.classList.add('hidden');
-            }
-        });
-    } else {
-        console.error("検索バーまたはドロップダウン要素が見つかりません");
-    }
-});
+//         // 検索バー外をクリックしたらドロップダウンを非表示
+//         document.addEventListener('click', function (event) {
+//             if (!dropdown.contains(event.target) && event.target !== searchInput) {
+//                 dropdown.classList.add('hidden');
+//             }
+//         });
+//     } else {
+//         console.error("検索バーまたはドロップダウン要素が見つかりません");
+//     }
+// });
 
 // 検索結果並べ替え
 function updateSort() {

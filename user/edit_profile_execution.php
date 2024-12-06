@@ -1,9 +1,4 @@
- <?php
-//  完成
-
-if(isset($_POST['back'])){
-    header('Location: mypage.php');
-}
+<?php
 
 $pdo=new PDO('mysql:host=mysql311.phy.lolipop.lan;
             dbname=LAA1557203-boooook;charset=utf8',
@@ -11,23 +6,24 @@ $pdo=new PDO('mysql:host=mysql311.phy.lolipop.lan;
             'boooook');
 
 $name=$_POST['name'];
-$mail=$_POST['mail'];
-$postcord=$_POST['postcord'];
+$mail=mb_convert_kana($_POST['mail'], 'an');
+$postcord=mb_convert_kana($_POST['postcord'], 'an');
 $address=$_POST['address'];
 
+$existingUser = '';
 // メールアドレスの重複チェック
-$sql = $pdo->prepare('SELECT * FROM user WHERE mail_address = ?');
-$sql->execute([$mail]);
-$existingUser = $sql->fetch();
+if($_POST['beforMail'] <> $mail){
+    $sql = $pdo->prepare('SELECT * FROM user WHERE mail_address = ?');
+    $sql->execute([$mail]);
+    $existingUser = $sql->fetch();
+}
 
 if ($existingUser) {
-    // メールアドレスが重複している場合
-    header('Location: register.php?error=duplicate'); // 登録画面にリダイレクト（エラーを表示）
+    header('Location: mypage.php');
     exit();
 } else {
-    // 新規登録処理
-    $sql=$pdo->prepare('UPDATE user SET name=?,mail=?,postcord=?,address=?');
-    $sql->execute([$name,$mail,$postcord,$address]);
+    $sql=$pdo->prepare('UPDATE user SET name=?,mail_address=?,postal_code=?,address=? WHERE user_id = ?');
+    $sql->execute([$name,$mail,$postcord,$address,$_POST['user_id']]);
     $pdo=null;
     header('Location: mypage.php');
     exit();

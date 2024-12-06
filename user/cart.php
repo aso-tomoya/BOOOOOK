@@ -1,6 +1,5 @@
 <?php
 session_start();
-session_destroy();
 
 // ヘッダー呼び出し
 include_once('../header.php');
@@ -62,7 +61,15 @@ $item_cnt = array_count_values($cart);
             <h2>合計金額（税込）</h2>
             <p class="cart-total">¥<?= number_format($subtotal ?? 0); ?></p>
             <hr>
-            <a href="checkout.php" class="cart-checkout-button">購入画面に進む</a>
+            <?php if (count($item_cnt) > 0): ?>
+                <?php if(isset($_SESSION['user_id'])): ?>
+                    <a href="checkout.php" class="cart-checkout-button">購入画面に進む</a>
+                <?php else: ?>
+                    <a href="login.php" class="cart-checkout-button">ログインして購入</a>
+                <?php endif; ?>
+            <?php else: ?>
+                <p class="cart-empty-message">カートが空です。</p>
+            <?php endif; ?>
         </div>
     </div>
 </main>

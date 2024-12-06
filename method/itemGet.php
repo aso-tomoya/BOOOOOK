@@ -33,7 +33,7 @@ function getPickup($userId, $db)
 {
     if ($userId) {
         // ユーザーの注文履歴から商品IDを取得
-        $query = "SELECT item_id FROM orders WHERE user_id = ?";
+        $query = "SELECT item_id FROM order_detail WHERE user_id = ?";
         $sql = $db->prepare($query);
         $sql->execute([$userId]);
         $orderedItemIds = $sql->fetchAll(PDO::FETCH_COLUMN);

@@ -4,6 +4,7 @@ session_start();
 
 // ヘッダー呼び出し
 include_once('../header.php');
+include_once('../method/userGet.php');
 ?>
 
 
@@ -118,5 +119,10 @@ include_once('../header.php');
     });
 });
 </script>
+<?php
+if(isset($_GET['login'])){
+    echo '<script>alert("ログインに成功しました。\nようこそ、'.getUser($db,$_SESSION['user_id'])['name'].'さん！");</script>';
+}
+?>
 </body>
 </html>
