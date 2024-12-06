@@ -1,6 +1,13 @@
 <?php
 session_start();
 
+// カートからのログインの場合、カートに遷移
+$url = 'index.php';
+if($_SESSION['fromCart']){
+    unset($_SESSION['fromCart']);
+    $url = 'cart.php';
+}
+
 // 完成
 
 $pdo=new PDO('mysql:host=mysql311.phy.lolipop.lan;
@@ -16,7 +23,7 @@ $pdo=new PDO('mysql:host=mysql311.phy.lolipop.lan;
                     $_SESSION['user_id'] = $s['user_id'];
                     $_SESSION['user_name'] = $s['name'];
                 }
-                header('Location: index.php');
+                header('Location: '.$url.'?login=true');
                 exit();
             }else{
                 header('Location: login.php?error=true');

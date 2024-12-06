@@ -1,6 +1,14 @@
-<!-- 完成 -->
+<?php
+session_start();
 
-<?php include_once('../header.php'); ?>
+// カートからの遷移を判定
+$_SESSION['fromCart'] = false;
+if(strpos($_SERVER['HTTP_REFERER'], '/cart.php')){
+    $_SESSION['fromCart'] = true;
+}
+
+include_once('../header.php');
+?>
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -43,6 +51,17 @@
 
 <a href="../admin/login.php" class="admin-login-link">管理者としてログイン</a>
 
-
+<script>
+    // ページ読み込み時に実行
+    window.onload = function() {
+        // URLのクエリパラメータを取得
+        const params = new URLSearchParams(window.location.search);
+        
+        // resultがtrueの場合にアラートを表示
+        if (params.get('result') === 'true') {
+            alert('新規登録に成功しました！続けてログインしてください');
+        }
+    };
+</script>
 </body>
 </html>

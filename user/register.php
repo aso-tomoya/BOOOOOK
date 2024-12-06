@@ -69,13 +69,23 @@
             <label for="confirm_pass">パスワードを確認*</label><br>
             <p style="text-align:center"><input type="password" name="confirm_pass" id="confirm_pass" class="textbox"><br>
         </div>
+
+
+        <div class="form-group">
+            <label for="postcord">郵便番号*</label>
+            <input type="text" name="postcord" id="postcord" oninput="formatPostalCode(this)" required>
+        </div>
+
         <div class="form-group">
             <p><label for="post_code">郵便番号*</label></p>
             <p><input type="text" name="postal_code" id="postal_code" class="postal_code" pattern="\d{3}-\d{4}"></p>
         </div>
-        <div class="form-group">
-            <label for="address">住所(建物名も含む)*</label><br>
-            <p style="text-align:center"><input type="text" name="address" id="address" class="textbox"><br><br>
+
+        <?php if(isset($_GET['error']) && $_GET['error'] == 'duplicate'){ echo '<p style="color:red;">このメールアドレスは既に登録されています。</p>'; } ?>
+
+        <div class="button-container">
+            <a href="login.php" class="button2">戻る</a>
+            <input type="submit" class="button1" name="action" value="アカウント作成">
         </div>
         <p style="text-align:center"><input type="submit" class="button" name="action" value="アカウント作成">
     </form>
@@ -117,6 +127,19 @@
     password1.addEventListener("input", checkPasswordsMatch);
     password2.addEventListener("input", checkPasswordsMatch);
 });
+
+function formatPostalCode(input) {
+            // 入力値から数字のみを抽出
+            let value = input.value.replace(/[^0-9]/g, '');
+            
+            // フォーマットを適用 (3桁-4桁形式)
+            if (value.length > 3) {
+                value = value.slice(0, 3) + '-' + value.slice(3, 7);
+            }
+            
+            // 入力欄に反映
+            input.value = value;
+        }
 </script>
 </body>
 </html>

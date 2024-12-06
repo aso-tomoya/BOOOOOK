@@ -6,11 +6,19 @@ include_once ('../header.php');
 // メソッドファイル呼び出し
 include_once ('../method/itemGet.php');
 
-$word = isset($_GET['searchWord']) ? $_GET['searchWord'] : $getGenre($db, $_GET['genre'])['genre_name'] ?? '';
+// 完成
+
+// 検索ワード、検索ジャンルIDを取得
+$word = isset($_GET['searchWord']) ? $_GET['searchWord'] : '' ;
+$genre = isset($_GET['genre']) ? $_GET['genre'] : '' ;
+
 $sortBy = isset($_GET['sortBy']) ? $_GET['sortBy'] : 'sales_desc';
-
-$items = itemSearch($db, $word, $sortBy);
-
+// 検索ワードか、検索ジャンルIDで検索
+if(!empty($word)) $items = itemSearch($db, $word, $sortBy);
+else {
+    $items = itemSearchByGenre($db, $genre, $sortBy);
+    $word = 'ジャンル：'.getGenre($db, $genre)['genre_name'];
+}
 ?>
 
 <!DOCTYPE html>

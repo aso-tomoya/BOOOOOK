@@ -33,7 +33,7 @@ function getPickup($userId, $db)
 {
     if ($userId) {
         // ユーザーの注文履歴から商品IDを取得
-        $query = "SELECT item_id FROM orders WHERE user_id = ?";
+        $query = "SELECT item_id FROM order_detail WHERE user_id = ?";
         $sql = $db->prepare($query);
         $sql->execute([$userId]);
         $orderedItemIds = $sql->fetchAll(PDO::FETCH_COLUMN);
@@ -60,7 +60,7 @@ function getPickup($userId, $db)
 }
 
 
-#商品を検索
+#商品を検索ワードで検索
 function itemSearch($db, $word, $sortBy) {
     // 検索ワードが空でない場合のみ処理を実行
     if (!empty($word)) {
@@ -100,3 +100,32 @@ function itemSearch($db, $word, $sortBy) {
     }
 }
 
+// 商品をジャンルIDで検索
+function itemSearchByGenre($db, $id, $sortBy) {
+    // 並べ替え条件を動的に構築
+    $orderBy = '';
+    switch ($sortBy) {
+        case 'sales_desc': // 売上個数の多い順
+            $orderBy = 'sales_count DESC';
+            break;
+        case 'price_desc': // 価格の高い順
+            $orderBy = 'item_price DESC';
+            break;
+        case 'price_asc': // 価格の低い順
+            $orderBy = 'item_price ASC';
+            break;
+        case 'alphabetical': // 50音順 (商品名の昇順)
+            $orderBy = 'item_name ASC';
+            break;
+        default: // デフォルトでは人気順
+            $orderBy = 'sales_count DESC';
+    }
+
+    // ジャンルで検索
+    $query = "SELECT * FROM item WHERE genre_id = ? ORDER BY ".$orderBy;
+    $sql = $db->prepare($query);
+    $sql->execute([$id]);
+
+    // 検索結果を返す
+    return $sql->fetchAll(PDO::FETCH_ASSOC);
+}

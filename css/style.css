@@ -60,6 +60,10 @@ header .cart-button{
     font-weight: bold;
     margin: 5px;
     height: 40px;
+    max-width: 110px;
+    overflow: hidden;
+    white-space: nowrap; /* テキストを1行にする */
+    text-overflow: ellipsis;
 }
 
 
@@ -77,26 +81,27 @@ header form {
 /* ジャンル検索のドロップダウンリスト */
 .dropdown {
     position: absolute; /* レイアウトから切り離す */
-    background-color: #ffffff; /* 背景色を白に */
-    border: 1px solid #ddd; /* 淡い枠線 */
-    border-radius: 8px; /* 角を丸く */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* ソフトな影を追加 */
-    width: 300px; /* 必要に応じて調整 */
+    display: none;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 50%;
+    max-width: 600px;
     z-index: 1000; /* 最前面に表示 */
-    list-style: none; /* 点を消す */
-    margin: 0;
-    top: 65px; /* 必要に応じて調整 */
-    left: 30%; /* 必要に応じて調整 */
+    top: 10%;
     transition: opacity 0.3s ease, transform 0.3s ease; /* アニメーション効果 */
 }
 
 .dropdown ul {
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 
 .dropdown li {
     padding: 10px;
+    border-radius: 8px;
     cursor: pointer;
 }
 
@@ -104,12 +109,10 @@ header form {
     background-color: #f0f0f0;
 }
 
-.hidden {
-    display: none;
+.dropdown a{
+    text-decoration: none;
+    color: #000;
 }
-
-
-
 
 header .link {
     color: #ff6600;
@@ -519,6 +522,7 @@ header .link {
     display: inline-block;
     background-color: #00c8ff;
     color: #fff;
+    margin: 40px;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
@@ -561,3 +565,131 @@ header .link {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
+.mypage-container {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+.user-info {
+    width: 300px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.user-info a{
+    text-decoration: none;
+}
+
+.user-icon {
+    font-size: 5em;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.user-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.user-details li {
+    margin-bottom: 10px;
+}
+
+.user-details a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.user-details a:hover {
+    text-decoration: underline;
+}
+
+.logout-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.logout-button:hover {
+    background: #cc0000;
+}
+
+.purchase-history {
+    flex-grow: 1;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.history-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 30px;
+}
+
+.history-item {
+    background: #f9f9f9;
+    width: 150px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: left;
+}
+
+.history-item:hover{
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+.history-item .price {
+    font-size: 20px;
+}
+
+.history-item .date {
+    font-size: 10px;
+}
+
+.item-thumbnail {
+    display: flex;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.item-thumbnail img{
+    width: 50px;
+}
+
+.total-price {
+    position:absolute;
+    bottom:0;
+    right:0;
+}
+
+.cart-content ul{
+    list-style: none;
+}
+
+.cart-content li{
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.button-container a{
+    text-decoration: none;
+}
