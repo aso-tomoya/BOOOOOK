@@ -19,7 +19,6 @@ header h1 {
     color: #ff6600;
     font-size: xx-large;
     font-weight: bold;
-    display: flex;
     margin: 0;
 }
 
@@ -66,6 +65,7 @@ header .cart-button{
     white-space: nowrap; /* テキストを1行にする */
     text-overflow: ellipsis;
 }
+
 
 /* formのデザインをリセット */
 header form {
@@ -123,6 +123,7 @@ header .link {
     width: 200px;
     text-align: right;
 }
+
 
 .container {
     padding: 20px;
@@ -411,54 +412,6 @@ header .link {
     cursor: pointer;
 }
 
-.product-button:active {
-    transform: scale(0.95); /* クリックで少し縮む */
-    background-color: #009fcc; /* 色を変える */
-    transition: transform 0.1s, background-color 0.2s;
-}
-
-/* クリック後の一時的なエフェクト */
-.product-button.added {
-    position: relative;
-    animation: addedEffect 0.8s ease;
-}
-
-@keyframes addedEffect {
-    0% {
-        box-shadow: 0 0 0px #00CCFF;
-    }
-    50% {
-        box-shadow: 0 0 15px #00CCFF;
-    }
-    100% {
-        box-shadow: 0 0 0px #00CCFF;
-    }
-}
-
-/* アニメーションの準備 */
-@keyframes flyToCart {
-    0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: translateY(-100px) scale(1.1);
-        opacity: 0.8;
-    }
-    100% {
-        transform: translateY(0) scale(0);
-        opacity: 0;
-    }
-}
-
-/* 商品画像が移動するためのアニメーション */
-.fly-animation {
-    position: absolute;
-    z-index: 999;
-    animation: flyToCart 1s ease-in-out forwards;
-    pointer-events: none; /* 画像がクリックできないようにする */
-}
-
 .product-description {
     max-width: 800px;
     margin-top: 20px;
@@ -580,6 +533,7 @@ header .link {
     background-color: #009fcc;
 }
 
+
 .sort-options {
     margin-bottom: 20px;
     text-align: center;
@@ -610,7 +564,6 @@ header .link {
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
-
 
 .mypage-container {
     display: flex;
