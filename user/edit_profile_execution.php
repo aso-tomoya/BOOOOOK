@@ -1,4 +1,3 @@
-
 <?php
 
 $pdo=new PDO('mysql:host=mysql311.phy.lolipop.lan;
@@ -28,5 +27,5 @@ if ($existingUser) {
     $pdo=null;
     header('Location: mypage.php');
     exit();
-
+}
 ?>
