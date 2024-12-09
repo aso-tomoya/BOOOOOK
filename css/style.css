@@ -699,3 +699,9 @@ header .link {
 .button-container a{
     text-decoration: none;
 }
+
+.pro-info{
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    
+}
