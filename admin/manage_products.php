@@ -25,6 +25,7 @@ $pdo=new PDO('mysql:host=mysql311.phy.lolipop.lan;
 <input type="submit" value="商品追加">
 </form>
 <?php
+
 foreach($pdo->query('select * from item') as $row){
     echo '<div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #a9a9a9 solid 1px; font-size: 100%; padding: 20px;width: 320px;height: 150px;">';
     echo '<img src="',$row['item_img'],'" alt="Image">';
