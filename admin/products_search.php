@@ -14,7 +14,9 @@ $pdo = new PDO('mysql:host=mysql311.phy.lolipop.lan;
 
         if(isset($_POST['word'])){
             $search_term = '%' . $_POST['word'] . '%';
-        $sql='select * from item where item_name LIKE ? or where author LIKE ? or where summary LIKE ? or where item_name LIKE ?';
+            
+        $sql='select * from item inner join genre ON item.genre_id = genre.genre_id 
+        where item.item_name LIKE ? or item.author LIKE ? or item.summary LIKE ?  or genre.genre_name LIKE ?';
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$search_term]);
 
