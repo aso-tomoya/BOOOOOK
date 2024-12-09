@@ -5,6 +5,10 @@ body {
     background-color: rgb(240, 240, 243);
 }
 
+a{
+    text-decoration: none;
+}
+
 header {
     background-color: #666666;
     padding: 20px;
@@ -356,13 +360,16 @@ header .link {
 
 /* 商品詳細ページ用のスタイル */
 .product-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
-    border:double 7px #CCCFD6;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    margin: 20px;
-    background-color: #fff;
 }
 
 .product-detail {
@@ -696,8 +703,144 @@ header .link {
     text-align: left;
 }
 
-.button-container a{
+/* 新しい支払い方法リストのスタイル */
+.payment-list-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.payment-list-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.payment-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.payment-item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.payment-item p {
+    margin: 0;
+    color: #666;
+}
+
+.payment-button {
+    background-color: #007bff; /* ボタンの色を変更 */
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
     text-decoration: none;
+    margin-left: 10px;
+}
+
+.payment-remove {
+    background-color: #ff0000; /* 赤色ベース */
+    color: white;
+    border-radius: 4px;
+    padding: 4px 8px; /* サイズを小さく */
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.payment-button:hover {
+    background-color: #0056b3; /* ホバー時の色を変更 */
+}
+
+
+.payment-remove:hover {
+    background-color: #cc0000; /* ホバー時の色 */
+}
+
+
+
+.detail-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.detail-container h1 {
+    margin: 0;
+}
+
+.detail-image {
+    width: 200px;
+    object-fit: cover;
+}
+
+.detail-product-image {
+    width: 200px;
+    margin-right: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    box-shadow: 10px 10px 15px -10px;
+    margin-bottom: 20px;
+}
+
+.detail-product-info h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.detail-product-info p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.customer-details h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+}
+
+.customer-details p {
+    margin: 0;
+    color: #666;
+}
+
+.detail-button {
+    display:block;
+    background-color: #00CCFF;
+    color: white;
+    border-radius: 25px;
+    padding: 8px 20px;
+    margin-left:auto;
+    margin-right:auto;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
 }
 
 .pro-info{

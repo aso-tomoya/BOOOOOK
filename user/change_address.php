@@ -30,7 +30,7 @@ $url = $_SERVER['HTTP_REFERER'];
         </div>
         <div class="form-group">
             <label for="default-address">
-                <input type="checkbox" name="check" id="default-address">
+                <input type="checkbox" name="check" id="default-address" >
                 いつもここに届ける (住所を変更)
             </label>
         </div>

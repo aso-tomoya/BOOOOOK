@@ -121,7 +121,11 @@ include_once('../method/userGet.php');
 </script>
 <?php
 if(isset($_GET['login'])){
-    echo '<script>alert("ログインに成功しました。\nようこそ、'.getUser($db,$_SESSION['user_id'])['name'].'さん！");</script>';
+    echo '<script>
+            window.onload = function() {
+            alert("ログインに成功しました。\nようこそ、'.getUser($db,$_SESSION['user_id'])['name'].'さん！");
+            };
+        </script>';
 }
 ?>
 </body>

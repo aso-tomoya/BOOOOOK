@@ -14,18 +14,26 @@ if(empty($_SESSION['cart'])){
     $error = true;
 }else{
 
-$user = getUser($db, $_SESSION['user_id']);
+    $user = getUser($db, $_SESSION['user_id']);
 
-$cart = $_SESSION['cart'];
-foreach($cart as $itemId){
-    $itemPrice = get($db, $itemId)['item_price'];
-    checkout($db, $itemId, $user['user_id'], $user['pay_id'], $itemPrice);
-}
+    $detailId = null;
 
-unset($_SESSION['cart']);
-unset($_SESSION['name']);
-unset($_SESSION['postcode']);
-unset($_SESSION['address']);
+    if(isset($_SESSION['name'])){
+        $user['name'] = $_SESSION['name'];
+        $user['postal_code'] = $_SESSION['postcode'];
+        $user['address'] = $_SESSION['address'];
+        $detailId = checkoutInfo($db, $user);
+    }
+
+    $cart = $_SESSION['cart'];
+    foreach($cart as $itemId){
+        $itemPrice = get($db, $itemId)['item_price'];
+        checkout($db, $itemId, $user, $itemPrice, $detailId);
+    }
+    unset($_SESSION['cart']);
+    unset($_SESSION['name']);
+    unset($_SESSION['postcode']);
+    unset($_SESSION['address']);
 }
 ?>
 
