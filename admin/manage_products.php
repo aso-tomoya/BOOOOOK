@@ -22,7 +22,7 @@ $pdo=new PDO('mysql:host=mysql311.phy.lolipop.lan;
     <button>🔍</button>
 </form>
 
-<form action="add_product.php">
+<form action="add_product.php" method="post">
 <input type="submit" value="商品追加">
 </form>
 <?php
@@ -30,7 +30,7 @@ $pdo=new PDO('mysql:host=mysql311.phy.lolipop.lan;
 foreach($pdo->query('select * from item') as $row){
     echo '<div class="pro-info">';
     echo '<div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #a9a9a9 solid 1px; font-size: 100%; padding: 20px;width: 320px;height: 150px;">';
-    echo '<form=""';
+    echo '<form action="product_delete.php" method="post">';
     echo '<img src="../img/',$row['item_img'],'">';
     echo $row['item_name'],'<br>';
     echo $row['author'],'<br>';

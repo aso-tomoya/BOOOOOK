@@ -20,7 +20,21 @@ $pdo = new PDO('mysql:host=mysql311.phy.lolipop.lan;
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$search_term]);
 
+        foreach($pdo->query('select * from item') as $row){
+            echo '<div class="pro-info">';
+            echo '<div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #a9a9a9 solid 1px; font-size: 100%; padding: 20px;width: 320px;height: 150px;">';
+            echo '<form="product_delete.php" method="post">';
+            echo '<img src="../img/',$row['item_img'],'">';
+            echo $row['item_name'],'<br>';
+            echo $row['author'],'<br>';
+            echo $row['item_price'],'円<br>';
+            echo '<p style="text-align:right"><input type="submit" value="商品削除">';
+            echo '</div>';
+            echo '<br>';
+            echo '</div>';
         }
-?>
+    }
+        $pdo = null;
+        ?>
 </body>
 </html>
