@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(isset($_SESSION['url'])){
+    unset($_SESSION['url']);
+}
 
 include_once('../header.php');
 include_once('../method/userGet.php');
@@ -45,7 +48,7 @@ $orders = getOrder($db, $_SESSION['user_id']);
             <li><a href="edit_profile.php">変更</a></li>
 
             <li>現在の支払い方法：<br>　
-                <?php if(!$upay):?>
+                <?php if(!isset($upay)):?>
                     登録されていません。
                 <?php else:?>
                     ****-****-****-<?=substr($upay['card_number'],-4)?>

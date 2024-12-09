@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(isset($_SESSION['url'])){
+    unset($_SESSION['url']);
+}
 
 // ヘッダー呼び出し
 include_once('../header.php');
@@ -56,12 +59,12 @@ $item_cnt = array_count_values($cart);
                 </ul>
             <?php else: ?>
             <ul>
-                <li>カード番号：****-****-****-<?=substr($upay['card_number'],-4)?></li>
+                <li>カード番号：****-****-****-<?=substr($payInfo['card_number'],-4)?></li>
                 <li>有効期限：<?=$payInfo['validity_period']?></li>
                 <li>カード名義：<?=$payInfo['card_name']?></li>
             </ul>
             <?php endif ?>
-            <a href="mypage_payment.php">支払方法を管理</a>
+            <a href="manage_payment.php">支払方法を管理</a>
 
             <hr>
 

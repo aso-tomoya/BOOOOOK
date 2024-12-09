@@ -26,7 +26,7 @@ if ($existingUser) {
     // 新規登録処理
     $sql = $pdo->prepare('INSERT INTO user(name, mail_address, user_pass, postal_code, address) VALUES(?,?,?,?,?)');
     $sql->execute([$name, $mail, $password1, $postcord, $address]);
-    $pdo = null;
+    $sql = null;
     header('Location: login.php?result=true'); // ログイン画面にリダイレクト
     exit();
 }

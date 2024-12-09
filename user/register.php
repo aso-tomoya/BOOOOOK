@@ -96,17 +96,17 @@
 });
 
 function formatPostalCode(input) {
-            // 入力値から数字のみを抽出
-            let value = input.value.replace(/[^0-9]/g, '');
-            
-            // フォーマットを適用 (3桁-4桁形式)
-            if (value.length > 3) {
-                value = value.slice(0, 3) + '-' + value.slice(3, 7);
-            }
-            
-            // 入力欄に反映
-            input.value = value;
-        }
+    // 入力値から数字のみを抽出
+    let value = input.value.replace(/[^0-9]/g, '');
+    
+    // フォーマットを適用 (3桁-4桁形式)
+    if (value.length > 3) {
+        value = value.slice(0, 3) + '-' + value.slice(3, 7);
+    }
+    
+    // 入力欄に反映
+    input.value = value;
+}
 </script>
 </body>
 </html>
