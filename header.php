@@ -79,6 +79,10 @@ $genres=getAllGenre($db);
             <?php endif; ?>
         </div>
         <?php endif; ?>
+    <?php elseif(!strpos($_SERVER['PHP_SELF'], '/login.php')): ?>
+        <a href="logout.php">
+            <button class="login-button">ログアウト</button>
+        </a>
     <?php endif; ?>
 </header>
 

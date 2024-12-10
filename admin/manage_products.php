@@ -25,22 +25,39 @@ $pdo=new PDO('mysql:host=mysql311.phy.lolipop.lan;
 <form action="add_product.php">
 <input type="submit" value="商品追加">
 </form>
-<?php
 
-foreach($pdo->query('select * from item') as $row){
-    echo '<div class="pro-info">';
-    echo '<div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #a9a9a9 solid 1px; font-size: 100%; padding: 20px;width: 320px;height: 150px;">';
-    echo '<form=""';
-    echo '<img src="../img/',$row['item_img'],'">';
-    echo $row['item_name'],'<br>';
-    echo $row['author'],'<br>';
-    echo $row['item_price'],'円<br>';
-    echo '<p style="text-align:right"><input type="submit" value="商品削除">';
-    echo '</div>';
-    echo '<br>';
-    echo '</div>';
-}
-$pdo = null;
+<?php foreach ($pdo->query('SELECT * FROM item') as $row): ?>
+        <div class="pro-info" style="width: 30%;">
+            <div class="item-box">
+                <form method="post" action="delete_item.php">
+                    <img src="../img/<?= $row['item_img'] ?>" alt="<?= $row['item_name'] ?>" style="width: 100px;">
+                    <p><?= $row['item_name'] ?><br>
+                    <?= $row['author'] ?><br>
+                    <?= $row['item_price'] ?>円</p>
+                    <p style="text-align:right">
+                        <input type="hidden" name="item_id" value="<?= $row['item_id'] ?>">
+                        <input type="submit" value="商品削除">
+                    </p>
+                </form>
+            </div>
+        </div>
+    <?php endforeach; ?>
+
+<?php
+// foreach($pdo->query('select * from item') as $row){
+//     echo '<div class="pro-info">';
+//     echo '<div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #a9a9a9 solid 1px; font-size: 100%; padding: 20px;width: 320px;height: 150px;">';
+//     echo '<form=""';
+//     echo '<img src="../img/'.$row['item_img'].'">';
+//     echo $row['item_name'],'<br>';
+//     echo $row['author'],'<br>';
+//     echo $row['item_price'],'円<br>';
+//     echo '<p style="text-align:right"><input type="submit" value="商品削除">';
+//     echo '</div>';
+//     echo '<br>';
+//     echo '</div>';
+// }
+// $pdo = null;
 ?>
 </body>
 </html>

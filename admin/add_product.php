@@ -23,17 +23,17 @@
     <label for="genre">ジャンル</label>
     <input type="text" name="genre" list="genre" autocomplete="off">
     <datalist id="genre">
-            <option value="文学・小説">文学・小説</option>
-            <option value="マンガ">マンガ</option>
-            <option value="ライトノベル">ライトノベル</option>
-            <option value="ミステリー・サスペンス">ミステリー・サスペンス</option>
-            <option value="SF・ファンタジー">SF・ファンタジー</option>
-            <option value="ビジネス・経済">ビジネス・経済</option>
-            <option value="自己啓発・健康">自己啓発・健康</option>
-            <option value="趣味・ホビー">趣味・ホビー</option>
-            <option value="科学・技術">科学・技術</option>
-            <option value="歴史・地理">歴史・地理</option>
-            <option value="アート・デザイン">アート・デザイン</option>
+            <option value="1">文学・小説</option>
+            <option value="2">マンガ</option>
+            <option value="3">ライトノベル</option>
+            <option value="4">ミステリー・サスペンス</option>
+            <option value="5">SF・ファンタジー</option>
+            <option value="6">ビジネス・経済</option>
+            <option value="7">自己啓発・健康</option>
+            <option value="8">趣味・ホビー</option>
+            <option value="9">科学・技術</option>
+            <option value="10">歴史・地理</option>
+            <option value="11">アート・デザイン</option>
 </datalist>
 </div>
 <div class="form-group">
