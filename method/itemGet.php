@@ -129,3 +129,29 @@ function itemSearchByGenre($db, $id, $sortBy) {
     // 検索結果を返す
     return $sql->fetchAll(PDO::FETCH_ASSOC);
 }
+
+function itemGetAll($db, $sortBy){
+    $orderBy = '';
+    switch ($sortBy) {
+        case 'sales_desc': // 売上個数の多い順
+            $orderBy = 'sales_count DESC';
+            break;
+        case 'price_desc': // 価格の高い順
+            $orderBy = 'item_price DESC';
+            break;
+        case 'price_asc': // 価格の低い順
+            $orderBy = 'item_price ASC';
+            break;
+        case 'alphabetical': // 50音順 (商品名の昇順)
+            $orderBy = 'item_name ASC';
+            break;
+        default: // デフォルトでは人気順
+            $orderBy = 'sales_count DESC';
+    }
+    
+    $query = "SELECT * FROM item ORDER BY ".$orderBy;
+    $sql = $db->query($query);
+
+    // 検索結果を返す
+    return $sql->fetchAll(PDO::FETCH_ASSOC);
+}

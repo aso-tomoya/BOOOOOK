@@ -20,7 +20,7 @@ $author = $_POST['author'];
 $item_price = mb_convert_kana($_POST['item_price'], 'n');
 $relaese_date = mb_convert_kana($_POST['relaese_date'], 'n');
 $summary = $_POST['summary'];
-$item_img = mb_convert_kana($_FILES['item_img']['tmp_name']);
+$item_img = mb_convert_kana($_FILES['item_img']['name']);
 
 
 // 新規登録処理

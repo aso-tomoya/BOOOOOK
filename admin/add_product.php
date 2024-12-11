@@ -1,3 +1,4 @@
+<?php include_once '../header.php' ?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -6,8 +7,8 @@
     <link rel="stylesheet" href="../css/style.css">
     <title>商品追加</title>
 </head>
+
 <body>
-<?php include_once '../header.php' ?>
 <div class="form-container">
 <h2 class="form-title">商品の追加</h2>
 <?php if(isset($_GET['error'])){
@@ -21,8 +22,7 @@
 </div>
 <div class="form-group">
     <label for="genre">ジャンル</label>
-    <input type="text" name="genre" list="genre" autocomplete="off">
-    <datalist id="genre">
+    <select name="genre" id="genre">
             <option value="1">文学・小説</option>
             <option value="2">マンガ</option>
             <option value="3">ライトノベル</option>
@@ -34,7 +34,7 @@
             <option value="9">科学・技術</option>
             <option value="10">歴史・地理</option>
             <option value="11">アート・デザイン</option>
-</datalist>
+    </select>
 </div>
 <div class="form-group">
     <label for="author">作者名</label>

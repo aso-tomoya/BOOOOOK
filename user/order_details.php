@@ -13,7 +13,7 @@ $pay = getPay($db, $order['pay_id']);
 
 if($order['detail_id']){
     $info = getInfo($db, $order['detail_id']);
-    $user['name'] = $info['detail_info'];
+    $user['name'] = $info['detail_name'];
     $user['postal_code'] = $info['detail_postal'];
     $user['address'] = $info['detail_address'];
 }

@@ -193,18 +193,21 @@ header .link {
 }
 
 .item img {
-    width: 180px;
+    /* width: 180px; */
+    height:280px;
     background-color: #cccccc;
 }
 
 .item .img-top-3 {
-    width: 200px;
+    /* width: 200px;*/
+    height:320px;
 }
 
 .item .title {
     font-size: 25px;
     margin-top: 5px;
     max-width: 200px; /* タイトルの最大幅 */
+    height:80px;
     display: -webkit-box; /* ブラウザ対応のために必要 */
     line-clamp: 0;
     -webkit-line-clamp: 2; /* 表示する行数 */
@@ -847,4 +850,8 @@ header .link {
     background-color: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     
+}
+
+.admin {
+    text-align: center;
 }

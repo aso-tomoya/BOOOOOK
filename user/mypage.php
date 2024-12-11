@@ -35,7 +35,7 @@ $orders = getOrder($db, $_SESSION['user_id']);
 <main class="mypage-container">
     <section class="user-info">
         <div class="user-icon">👤</div>
-        <h2><?=$uname?>様</h2>
+        <h2><?=$uname?> 様</h2>
         <ul class="user-details">
 
             <li>名前：<br>　<?=$uname?></li>
@@ -48,7 +48,7 @@ $orders = getOrder($db, $_SESSION['user_id']);
             <li><a href="edit_profile.php">変更</a></li>
 
             <li>現在の支払い方法：<br>　
-                <?php if(!isset($upay)):?>
+                <?php if(empty($upay)):?>
                     登録されていません。
                 <?php else:?>
                     ****-****-****-<?=substr($upay['card_number'],-4)?>
@@ -56,7 +56,7 @@ $orders = getOrder($db, $_SESSION['user_id']);
             </li>
             <li><a href="manage_payment.php">支払い方法管理</a></li>
         </ul>
-        <a href="logout.php"><button class="logout-button">ログアウト</button></a>
+        <a href="logout.php" onclick="logout()"><button class="logout-button">ログアウト</button></a>
     </section>
 
     <section class="purchase-history">
@@ -79,7 +79,7 @@ $orders = getOrder($db, $_SESSION['user_id']);
                 <?php endforeach ?>
                     <div class="total-price">合計：<?=number_format($user['total_price'])?>円</div>
             <?php else: ?>
-                <h1>まだ商品が購入されていません</h1>
+                <h1 style="position:absolute">まだ商品が購入されていません</h1>
             <?php endif ?>
         </div>
     </section>
@@ -88,6 +88,15 @@ $orders = getOrder($db, $_SESSION['user_id']);
 <script>
 function goToDetailPage(orderId){
     window.location.href = `order_details.php?id=${orderId}`;
+}
+
+function logout(){
+    const userConfirmed = confirm("ログアウトしますか？");
+
+    if (!userConfirmed) {
+    // キャンセルされた場合、リンクの動作を中止
+    event.preventDefault();
+    }
 }
 </script>
 

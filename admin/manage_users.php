@@ -17,9 +17,8 @@ dbname=LAA1557203-boooook;charset=utf8',
 'LAA1557203',
 'boooook');
 ?>
-<form action="user_delete.php" method="post">
-<input type="submit" value="削除確認">
-
+<form action="user_delete.php" method="post" class="form-container">
+<input type="submit" value="削除確認" class="button2" onclick="deleteUser()"><br><br>
 <?php
 if(isset($_GET['error'])){
     echo '<p style="color:red" >削除できませんでした';
@@ -46,6 +45,15 @@ echo '</form>';
 $pdo = null;
 ?>
 
+<script>
+function deleteUser(){
+    const userConfirmed = confirm("削除しますか？");
 
+    if (!userConfirmed) {
+    // キャンセルされた場合、リンクの動作を中止
+    event.preventDefault();
+    }
+}
+</script>
 </body>
 </html>

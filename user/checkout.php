@@ -53,7 +53,7 @@ $item_cnt = array_count_values($cart);
             <hr>
 
             <h2>支払い方法</h2>
-            <?php if(!$payInfo):?>
+            <?php if(empty($payInfo)):?>
                 <ul>
                     <li>登録されていません</li>
                 </ul>
@@ -91,7 +91,11 @@ $item_cnt = array_count_values($cart);
 
 
         <div class="cart-right">
+            <?php if(empty($payInfo)): ?>
+                <a href="manage_payment.php" class="button2">支払方法を登録してください</a>
+            <?php else: ?>
             <a href="order_complete.php" class="cart-checkout-button">注文を確定する</a><hr>
+            <?php endif; ?>
             <p class="cart-subtotal">小計: ¥<?= number_format($subtotal); ?></p>
             <p class="cart-subtotal">送料: ¥200</p><hr>
             <p class="cart-total">合計: ¥<?= number_format($subtotal + 200); ?></p>

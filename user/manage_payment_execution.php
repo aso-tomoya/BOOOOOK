@@ -49,6 +49,10 @@ if(isset($_GET['RemoveNumber'])){
     $payId = $_GET['RemoveNumber'];
     $userId = $_SESSION['user_id'];
 
+    // payment_infoのユーザーIDをnullに
+    $sql = $pdo->prepare('UPDATE payment_info SET user_id = null WHERE user_id = ?');
+    $sql->execute([$userId]);
+
     $sql = $pdo->prepare('DELETE FROM payment_info WHERE pay_id = ? AND user_id = ?');
     $sql->execute([$payId, $userId]);
     header('Location: manage_payment.php?result3=true');

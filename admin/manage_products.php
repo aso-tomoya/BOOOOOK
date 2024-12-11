@@ -17,17 +17,19 @@ $pdo=new PDO('mysql:host=mysql311.phy.lolipop.lan;
     'boooook');
 ?>
 
+<div class="form-container">
+
 <form action="products_search.php" method="post">
     <input type="text" name="word" placeholder="検索">
     <button>🔍</button>
-</form>
+</form><br>
 
 <form action="add_product.php">
-<input type="submit" value="商品追加">
-</form>
+<input type="submit" value="商品追加" class="button1">
+</form><br>
 
 <?php foreach ($pdo->query('SELECT * FROM item') as $row): ?>
-        <div class="pro-info" style="width: 30%;">
+        <div class="pro-info" style="width: 100%;">
             <div class="item-box">
                 <form method="post" action="delete_item.php">
                     <img src="../img/<?= $row['item_img'] ?>" alt="<?= $row['item_name'] ?>" style="width: 100px;">
@@ -36,12 +38,13 @@ $pdo=new PDO('mysql:host=mysql311.phy.lolipop.lan;
                     <?= $row['item_price'] ?>円</p>
                     <p style="text-align:right">
                         <input type="hidden" name="item_id" value="<?= $row['item_id'] ?>">
-                        <input type="submit" value="商品削除">
+                        <input type="submit" class="button2" value="商品削除">
                     </p>
                 </form>
             </div>
         </div>
-    <?php endforeach; ?>
+<?php endforeach; ?>
+</div>
 
 <?php
 // foreach($pdo->query('select * from item') as $row){

@@ -10,9 +10,9 @@
 
 <?php include_once '../header.php' ?>
 
-<div class="login-container">
+<div class="form-container">
     
-    <form action="login_execution.php" method="post" class="login-form">
+    <form action="login_execution.php" method="post" class="form">
         <div class="form-group">
             <label for="mail">管理者ID</label><br>
             <input type="text" name="admin_id" id="admin_id" class="admin_id" required><br>
@@ -30,6 +30,6 @@
 
         <input type="submit" class="button1" name="action" value="ログイン">
     </form>
-
+    <a href="../user/login.php" class="admin-login-link">ユーザーとしてログイン</a>
 </body>
 </html>
