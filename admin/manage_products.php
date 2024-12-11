@@ -24,6 +24,9 @@ $pdo=new PDO('mysql:host=mysql311.phy.lolipop.lan;
     <button>🔍</button>
 </form><br>
 
+<form action="add_product.php" method="post">
+<input type="submit" value="商品追加">
+</form>
 <form action="add_product.php">
 <input type="submit" value="商品追加" class="button1">
 </form><br>
