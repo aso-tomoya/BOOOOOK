@@ -24,7 +24,6 @@ $pdo=new PDO('mysql:host=mysql311.phy.lolipop.lan;
     <button>🔍</button>
 </form><br>
 
-
 <form action="add_product.php">
 <input type="submit" value="商品追加" class="button1">
 </form><br>
@@ -47,21 +46,23 @@ $pdo=new PDO('mysql:host=mysql311.phy.lolipop.lan;
 <?php endforeach; ?>
 </div>
 
+
 <?php
-// foreach($pdo->query('select * from item') as $row){
-//     echo '<div class="pro-info">';
-//     echo '<div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #a9a9a9 solid 1px; font-size: 100%; padding: 20px;width: 320px;height: 150px;">';
-//     echo '<form=""';
-//     echo '<img src="../img/'.$row['item_img'].'">';
-//     echo $row['item_name'],'<br>';
-//     echo $row['author'],'<br>';
-//     echo $row['item_price'],'円<br>';
-//     echo '<p style="text-align:right"><input type="submit" value="商品削除">';
-//     echo '</div>';
-//     echo '<br>';
-//     echo '</div>';
-// }
-// $pdo = null;
+
+//foreach($pdo->query('select * from item') as $row){
+    //echo '<div class="pro-info">';
+    //echo '<div style="-moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: #a9a9a9 solid 1px; font-size: 100%; padding: 20px;width: 320px;height: 150px;">';
+    //echo '<form action="product_delete.php" method="post">';
+    //echo '<img src="../img/',$row['item_img'],'">';
+    //echo $row['item_name'],'<br>';
+    //echo $row['author'],'<br>';
+    //echo $row['item_price'],'円<br>';
+    //echo '<p style="text-align:right"><input type="submit" name="delete_id" value="商品削除">';
+    //echo '</div>';
+    //echo '<br>';
+    //echo '</div>';
+//}
+//$pdo = null;
 ?>
 </body>
 </html>
