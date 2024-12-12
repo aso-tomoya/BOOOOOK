@@ -20,7 +20,7 @@ $existingUser = $sql->fetch();
 
 if ($existingUser) {
     // メールアドレスが重複している場合
-    header('Location: register.php?result=false'); // 登録画面にリダイレクト（エラーを表示）
+    header('Location: register.php?error=true'); // 登録画面にリダイレクト（エラーを表示）
     exit();
 } else {
     // 新規登録処理

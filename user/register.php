@@ -49,7 +49,7 @@
             <input type="text" name="address" id="address" required>
         </div>
 
-        <?php if(isset($_GET['error']) && $_GET['error'] == 'duplicate'){ echo '<p style="color:red;">このメールアドレスは既に登録されています。</p>'; } ?>
+        <?php if(isset($_GET['error']) && $_GET['error']){ echo '<p style="color:red;">このメールアドレスは既に登録されています。</p>'; } ?>
 
         <div class="button-container">
             <a href="login.php" class="button2">戻る</a>

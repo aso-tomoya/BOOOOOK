@@ -1,15 +1,11 @@
 <?php
 session_start();
 
+include ('../header.php');
 // カートからの遷移を判定
-if(isset($_SESSION['fromCart']) && !$_SESSION['fromCart']){
-    if(strpos($_SERVER['HTTP_REFERER'], '/cart.php')){
+if(strpos($_SERVER['HTTP_REFERER'], '/cart.php')){
         $_SESSION['fromCart'] = true;
-    }
-}else{
-    $_SESSION['fromCart'] = false;
 }
-include_once('../header.php');
 ?>
 
 <!DOCTYPE html>

@@ -23,7 +23,7 @@ function getPayAll($db, $id){
 
 // ユーザーの注文履歴取得
 function getOrder($db, $id){
-    $sql = $db->prepare('SELECT * FROM order_detail where user_id = ? order by purchase_date desc');
+    $sql = $db->prepare('SELECT * FROM order_detail where user_id = ? order by order_id desc');
     $sql->execute([$id]);
     return $sql->fetchAll(PDO::FETCH_ASSOC);
 }

@@ -3,7 +3,7 @@ session_start();
 
 // カートからのログインの場合、カートに遷移
 $url = 'index.php';
-if($_SESSION['fromCart']){
+if(isset($_SESSION['fromCart']) && $_SESSION['fromCart']){
     unset($_SESSION['fromCart']);
     $url = 'cart.php';
 }

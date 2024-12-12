@@ -17,7 +17,7 @@ $payInfo = getPay($db, $user['pay_id']);
 
 // セッションに変更後の配送情報があるか確認
 $name = $_SESSION['name'] ?? $user['name'];
-$postCode = $_SESSION['postCode'] ?? $user['postal_code'];
+$postCode = $_SESSION['postcode'] ?? $user['postal_code'];
 $address = $_SESSION['address'] ?? $user['address'];
 
 // 数量を計算
@@ -42,7 +42,7 @@ $item_cnt = array_count_values($cart);
         <!-- 左側: 配送情報 -->
         <div class="cart-left">
 
-            <h2>配送情報</h2>
+            <h2>お届け先情報</h2>
             <ul>
                 <li>お名前：<?=$name?></li>
                 <li>郵便番号：<?=$postCode?></li>
@@ -97,8 +97,8 @@ $item_cnt = array_count_values($cart);
             <a href="order_complete.php" class="cart-checkout-button">注文を確定する</a><hr>
             <?php endif; ?>
             <p class="cart-subtotal">小計: ¥<?= number_format($subtotal); ?></p>
-            <p class="cart-subtotal">送料: ¥200</p><hr>
-            <p class="cart-total">合計: ¥<?= number_format($subtotal + 200); ?></p>
+            <p class="cart-subtotal">送料: ¥0</p><hr>
+            <p class="cart-total">合計: ¥<?= number_format($subtotal); ?></p>
         </div>
     </div>
 </main>

@@ -64,5 +64,28 @@ $pdo=new PDO('mysql:host=mysql311.phy.lolipop.lan;
 //}
 //$pdo = null;
 ?>
+
+<div id="back-to-top" class="back-to-top">
+    ↑
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const backToTopButton = document.getElementById('back-to-top');
+
+    // スクロールイベントの設定
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) { // スクロールが300pxを超えた場合
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+    });
+
+    // クリックイベントでページトップにスクロール
+    backToTopButton.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+});
+</script>
 </body>
 </html>
