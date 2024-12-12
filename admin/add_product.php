@@ -50,7 +50,7 @@
 </div>
 <div class="form-group">
     <label for="summary">説明</label>
-    <textarea name="summary" id="summary" rows="4"></textarea>
+    <textarea name="summary" id="summary" rows="10" cols="50"></textarea>
 </div>
 <div class="form-group">
     <label for="item_img">画像をアップロード</label>
